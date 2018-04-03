@@ -1,0 +1,1874 @@
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage[top=2cm, bottom = 2cm, left=1.5cm, right=1.5cm ]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage[none]{hyphenat}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[nottoc, notlot, notlof]{tocbibind}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{\slshape\MakeUppercase{Sequence Of Real Numbers }}
+\fancyhead[R]{\slshape }
+\fancyfoot[c]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+%This command is used to set the indentation of a paragraph
+\parindent 0ex
+\setlength{\parindent}{1em}
+\renewcommand{\baselinestretch}{1.1}
+
+\begin{document}
+%Title Page
+\begin{titlepage}
+\begin{center}
+\vspace*{1cm}
+\Large{\textbf {Real Analysis}}\\
+\Large{\textbf{Solution Set}}
+\vfill
+\line(1,0){400}\\[1mm]
+\huge{\textbf{Methods of Real Analysis}}\\[3mm]
+\Large{\textbf{Richard R. Goldberg}}\\[1mm]
+\line(1,0){400}
+\vfill
+Anish Sachdeva\\
+DTU / 2K16 / MC / 13\\
+\end{center}
+\end{titlepage}
+
+%Contents Page
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\setcounter{page}{1}
+
+% Definitions
+\def\exr{Exercise}
+\def\space{\,\,\,}
+\def\spacem{\,\,\,\,}
+\def\we{\mathrm{We \space know \space that}}
+\def\wealso{\mathrm{We \space also \space know \space that}}
+\def\from{\mathrm{From \space}}
+\def\hence{\mathrm{Hence \spacem Proved}}
+\def\no{\nonumber}
+
+%Sets and Functions
+\section{Sets and Functions}
+\fancyhead[L]{\slshape\MakeUppercase{Sets and functions }}
+
+\subsection{\exr \, 1.1}
+\fancyhead[R]{\slshape \exr \, 1.1}
+\begin{enumerate}
+	\item{Describe the following sets of real numbers geometrically :
+		\begin{enumerate}
+			\item {$A = \left\lbrace x |\space x < 7 \right\rbrace$ }
+			\item{$B = \left\lbrace x |\space \left| x \right| \geq 2 \right\rbrace$}
+			\item{$C = \left\lbrace x | \space \left| x \right| = 1 \right\rbrace$}
+		\end{enumerate}			
+	}
+	
+	\item{
+		Describe the following sets of points in the plane geometrically:
+		
+		\begin{enumerate}
+			\item{$A = \left\lbrace \left\langle x, y \right\rangle | \space x^2 + y^2 = 1 \right\rbrace$}
+			\item{$B = \left\lbrace \left\langle x, y \right\rangle | \space x \leq y \right\rbrace$}
+			\item{$C = \left\lbrace \left\langle x, y \right\rangle | \space x + y = 2 \right\rbrace$}
+		\end{enumerate}		 	
+	}
+	
+	\item{Let P be the set of prime Integers, which of the following are true ?
+		\begin{enumerate}
+			\item{$7 \in P$}
+			\item{$9 \in P$}
+			\item{$11 \not\in P$}
+		\end{enumerate}			
+	}
+\end{enumerate}
+\clearpage
+
+\subsection{\exr \, 1.2}
+\fancyhead[R]{\slshape \exr \, 1.2}
+\clearpage
+
+\subsection{\exr \, 1.3}
+\fancyhead[R]{\slshape \exr \, 1.3}
+\clearpage
+
+\subsection{\exr \, 1.4}
+\fancyhead[R]{\slshape \exr \, 1.4}
+\clearpage
+
+\subsection{\exr \, 1.5}
+\fancyhead[R]{\slshape \exr \, 1.5}
+\clearpage
+
+\subsection{\exr \, 1.6}
+\fancyhead[R]{\slshape \exr \, 1.6}
+\clearpage
+
+\subsection{\exr \, 1.7}
+\fancyhead[R]{\slshape \exr \, 1.7}
+\clearpage
+
+%Sequences Of Real Numbers
+\section{Sequences Of Real Numbers}
+\fancyhead[L]{\slshape\MakeUppercase{Sequence Of Real Numbers }}
+\subsection{\exr \, 2.1}
+\fancyhead[R]{\slshape \exr \, 2.1}
+\begin{enumerate}
+\item Let $\left\lbrace s_n\right\rbrace _ {n=1}^\infty$ be the sequence defined by 
+$$s_1 = 1$$
+$$s_2 = 1$$
+$$s_{n+1} = s_n + s_{n-1} \, \, (n = 3, 4, 5, \cdots) $$
+\indent Find $s_8$
+
+\begin{eqnarray*}
+s_3 = s_2 + s_1\\
+s_3 = 1 + 1\\
+s_3 = 2\\
+s_4 = s_3 + s_2\\
+s_4 = 2 + 1\\
+s_4 = 3\\
+s_5 = s_4 + s_3\\
+s_5 = 3 + 2\\
+s_5 = 5\\
+s_6 = s_5 + s_4\\
+s_6 = 5 + 3\\
+s_6 = 8\\
+\mathrm{ and \, so \, on \, we \, get} \cdots\\
+s_8 = 21
+\end{eqnarray*}
+
+\item {Write a formula or formulae for $s_n$ for each of the following sequences.\\
+\begin{enumerate}
+\item {1,0,1,0...\\
+	$s_n = 1 \, \forall \, \mathrm{N} \in \mathbb{I}$ where	$n = 2\mathrm{N}-1$\\
+	$s_n = 0 \, \forall \, \mathrm{N} \in \mathbb{I}$ where	$n = 2\mathrm{N}$
+}\\
+\item {1,3,6,10,15...\\
+	$s_n = s_{n-1} + n \, \forall n \in \mathbb{N}$	
+}\\
+\item {1,-4,9,-16,25,-36...\\
+	$s_n = (-1)^{n+1}n^2 \, \forall n \in \mathbb{N}$
+}\\
+\item {1,1,1,2,1,3,14,1,5,1,6...\\
+	$s_n = 1 \, \forall \, \mathrm{N} \in \mathbb{I}$ where	$n = 2\mathrm{N}-1$\\
+	$s_n = \frac{n}{2} \, \forall \, \mathrm{N} \in \mathbb{I}$ where	$n = 2\mathrm{N}$
+}
+	
+\end{enumerate} } 
+
+\item {Which of the following sequences (a), (b), (c) and (d) in the previous exercise are subsequences of $\left\lbrace \mathrm{n} \right\rbrace_{n=1}^\infty$?\\
+
+The sequences (a), (b) and (d) are subsequences of $\left\lbrace \mathrm{n} \right\rbrace_{n=1}^\infty$
+}
+
+\item {If S $= \left\lbrace s_n \right\rbrace_{n=1}^\infty \, = \, \left\lbrace 2n-1 \right\rbrace_{n=1}^\infty $ and N $= \left\lbrace n_i \right\rbrace_{n=1}^\infty = \left\lbrace i^2\right\rbrace_{i=1}^\infty.$ Find $s_5, s_9, n_2, s_{n_3}$. Is N a subsequence of $\left\lbrace \mathrm{k}\right\rbrace_{k=1}^\infty$ ?\\
+
+\begin{eqnarray*}
+s_5 = 2 \cdot 5 - 1\\
+s_5 = 9 \\
+s_9 = 2 \cdot 9 -1\\
+s_9 = 17\\
+n_2 = 2^2 = 4\\
+s_{n_3} = 2 \cdot n_3 - 1\\
+\mathrm{We \,\, know \,\, } n_3 = 3^2 = 9\\
+s_{n_3} = s_9 = 17
+\end{eqnarray*}
+
+Now $\left\lbrace k\right\rbrace_{k=1}^\infty = \lbrace 1, 2, 3, 4 \cdots \rbrace$ and the sequence N $=\left\lbrace i^2\right\rbrace_{i=1}^\infty = \lbrace 1, 4, 9 \cdots \rbrace$ is clearly a subsequence.
+}
+\end{enumerate}
+\clearpage
+
+\subsection{\exr \, 2.2}
+\fancyhead[R]{\slshape \exr \, 2.2}
+\begin{enumerate}
+	\item{If $\left\lbrace s_n\right\rbrace_{n=1}^\infty$ is a sequence of real 		numbers, if $s_n \leqslant \,$ M $(n \in \mathbb{I}) \,$ and if $\lim \limits_{n \to \infty} = \mathrm{L} \,$. Prove $\mathrm{L} \leqslant \mathrm{M}$\\
+	
+	\begin{align*}
+	\mathrm{We \,\, Know \,\,\,} s_n \leqslant \mathrm{M} \,\, \forall\, \mathrm{n} \in \mathbb{I}\\
+	\mathrm{and} \lim \limits_{n \to \infty} s_n = \mathrm{L}\\
+	\mathrm{Now, \, L\,\, } \leqslant \mathrm{max\,\,} \left(s_n\right)\\
+	\mathrm{and \,\,} \mathrm{max} \left(s_n \right) \leqslant \mathrm{M}\\
+	\mathrm{So, \, L } \leqslant \mathrm{M}
+	\end{align*}
+	}
+	
+	\item {If L $\in \mathbb{R}$, M $\in \mathbb{R}$ and L $\leq$ M $+ \epsilon$ for every $\epsilon \geq 0$, prove that L $\leq$ M 
+	
+	\begin{align*}	
+		\mathrm{We \,\, Know,} \left| s_n \right| \leq \mathrm{M}\,\, \forall n \in N\\
+		\mathrm{L} \leq \left| s_n \right| \,\, \forall n \in N\\
+		\mathrm{Now \,\, we \,\, know \,\, that, \,\,} L \ngtr \left| s_n \right| \\
+		\mathrm{Hence, \,\,} L \leq M 
+	\end{align*}
+	}
+	
+	\item{
+		If $\lbrace s_n \rbrace_{n=1}^\infty$ is a sequence of real numbers and if, for every $		\epsilon > 0$,\\
+		$\left| s_n - L \right| < \epsilon \,\, (n \geq \mathrm{N})$\\
+		where N does not depend on $\epsilon$, prove that all but a finite number of terms of $\lbrace s_n \rbrace_{n=1}^\infty$ are equal to L.		
+	}
+	
+	\item{
+		\begin{enumerate}
+			\item{find N $\in$ I such that\\
+				\begin{align*}
+					\left|\frac{2n}{n + 3} - 3\right| < \frac{1}{5} \,\, (n \geq N)					
+				\end{align*}	
+				
+				\begin{eqnarray}
+					\left| \frac{2n}{n+3} - 3 \right| < \frac{1}{5} \\
+					\left| \frac{2n - 3(n + 3)}{n + 3} \right| < \frac{1}{5} \nonumber \\
+					\left| \frac{-n-9}{n + 3} \right| < \frac{1}{5} \nonumber \\
+					\left| \frac{n+9}{n+3} \right| < \frac{1}{5} \nonumber \\
+					\frac{-1}{5} < \left| \frac{n+9}{n+3} \right| < \frac{1}{5} 
+				\end{eqnarray}
+				
+				\begin{center}
+					From (2)
+				\end{center}
+				
+				\begin{eqnarray}									
+					\frac{n+9}{n+3} < \frac{1}{5} \nonumber \\
+					5(n + 9) < n + 3 \nonumber \\
+					5n + 45 < n + 3 \nonumber \\
+					4n + 42 < 0 \nonumber \\
+					2n + 21 < 0 \nonumber \\
+					n < -21/2
+				\end{eqnarray} 
+				
+				Now according to (3), we have to find n $< -21/2$ which isn't possible.\\
+				Hence for no N $\in$ I is equation (1) satisfied.														
+			}
+			\item{Prove $\lim \limits_{n \to \infty} \frac{2n}{n+3}  = 2$ \\
+				To prove : $ \lbrace \frac{2n}{n+3} \rbrace_{n=1}^\infty = 2$\\
+				Let Limit L = 2
+				
+				\setcounter{equation}{0}				
+				\begin{eqnarray}
+					\left| \frac{2n}{n+3} - L \right| < \epsilon \nonumber \\
+					\left| \frac{2n}{n+3} - 2 \right| < \epsilon \\			
+					\left| \frac{2n - 2(n+3)}{n+3} \right| < \epsilon \nonumber \\
+					\left| \frac{6}{n+3} \right| < \epsilon \nonumber \\
+					\frac{6}{n+3} < \epsilon \nonumber \\
+					\frac{n+3}{6} < \frac{1}{\epsilon} \nonumber \\
+					n < \frac{6}{\epsilon} - 3
+				\end{eqnarray}									
+				
+				\begin{center}
+					From (2) we can see that for any positive N $\in \mathbb{I}$, where N $> \frac{6}{\epsilon} - 3$\\
+					$\forall n > \mathrm{N}$ the equation (1) is satisfied\\
+					Hence, 2 is the limit of the function: \\
+					$ \lbrace \frac{2n}{n+3} \rbrace_{n=1}^\infty $
+				\end{center}
+			}
+		\end{enumerate}			
+	}
+	
+	\item{
+		\begin{enumerate}
+			\item{Find $N \in I$ such that $\frac{1}{\sqrt{n+1}} < 0.3 $ when $n > N$ 
+				\setcounter{equation}{0}
+				
+				\begin{eqnarray}
+					\frac{1}{\sqrt{n+1}} < 0.3 \\
+					\sqrt{n+1} > \frac{1}{0.3} \nonumber \\
+					n+1 > \frac{1}{0.3^2} \nonumber \\
+					n+1 > \frac{1}{0.09} \nonumber \\
+					n > 11.\overline{11} - 1 \nonumber \\
+					n > 10.\overline{11}
+				\end{eqnarray}			
+				
+				\begin{center}
+					So, for any N $\in \mathbb{I}$ where N is positive and N $> 10.\overline{11}$\\
+					and n $>$ N, the equation (1) is satisfied
+				\end{center}								
+			}
+			\item{Prove that $\lim \limits_{n \to \infty} \frac{1}{\sqrt{n+1}} = 0$\\
+				To prove: limit L = 0\\
+				Let the limit of the function as $n \to \infty$ be L = 0\\
+				Now, \\
+				
+				\setcounter{equation}{0}
+				
+				\begin{eqnarray}
+					\left| \frac{1}{\sqrt{n+1}} - L \right| < \epsilon \,\,\, (\epsilon > 0)\\
+					\left| \frac{1}{\sqrt{n+1}} - 0 \right| < \epsilon \nonumber \\
+					\left| \frac{1}{\sqrt{n+1}} \right| < \epsilon 
+				\end{eqnarray}
+				
+				We need to find N $\in \mathbb{I}$ such that N is positive and equation (1) is satisfied $\forall n \geq \mathrm{N}$
+				
+				\begin{eqnarray}
+					\frac{1}{\sqrt{n+1}} < \epsilon \nonumber \\
+					\sqrt{n+1} > \frac{1}{\epsilon} \nonumber \\
+					n+1 > \frac{1}{\epsilon^2} \nonumber \\
+					n > \frac{1}{\epsilon^2} - 1 
+				\end{eqnarray}
+				
+				Now let us take a N such that N $> \frac{1}{\epsilon^2} -1 $. So for all n $\geq \mathrm{N}$ the equation (1) is satisfied. \\
+				Hence the limit of $ \lbrace \frac{1}{\sqrt{n+1}} \rbrace_{n=1}^\infty $ is 0.
+			}
+		\end{enumerate}			
+	}
+	
+	\item{If $\theta$ is a rational number prove that the sequence $\lbrace \sin{n \theta_{\pi}} \rbrace_{n=1}^\infty$ has a limit.}
+	
+	\item{For each of the following sequences, prove either that the sequence has a limit or that the sequence does not have a limit.
+		\begin{enumerate}
+			\item{ $\lbrace \frac{n^2}{n+5} \rbrace_{n=1}^\infty$\\
+			Let the sequence have a limit L such that $\lim \limits_{n \to \infty}\lbrace \frac{n^2}{n+5} \rbrace = L$\\
+			Now if the function has a limit, it would also satisfy the equation :\\
+			
+			\setcounter{equation}{0}
+			
+			\begin{eqnarray}
+				\left| \frac{n^2}{n + 5} - L \right| < \epsilon \,\,\, (\forall n \geq N) \,\,\, \mathrm{and} \,\,\, (\epsilon > 0)\\
+				\left| \frac{n}{1 + 5/n} - L \right| < \epsilon \nonumber \\
+			\end{eqnarray}						
+			
+			\begin{center}
+				Dividing Numerator and denominator by n
+			\end{center}
+			
+			\begin{eqnarray}
+				1 + 5/n > 1 \nonumber \\
+				\frac{1}{1+5/n} < 1 \nonumber \\
+				\frac{n}{1 + 5/n} < n 
+			\end{eqnarray}
+			
+			\begin{center}
+				Substituting the value of (3) in (2)
+			\end{center}
+			
+			\begin{eqnarray}
+				\left| n - L \right| < \epsilon
+			\end{eqnarray}
+			
+			\begin{center}
+				We can now clearly see that for any value of $\epsilon$ $\left| n - L \right|$ would be greater than that of $\epsilon$, hence limit does not exist and the function diverges\\
+			$\lim \limits_{n \to \infty} \frac{n^2}{n + 5} = +\infty$
+			\end{center}
+			}
+			\item{$\lbrace \frac{3n}{n+7^{1/2}} \rbrace_{n=1}^\infty$\\
+			Let us suppose that the limit of the funtion exists and it's value be L, that is \\
+			$ \lbrace \frac{n}{n+7^{1/2}} \rbrace_{n=1}^\infty = L$\\
+			Now if the limit exists, the function will satisfy the equation\\
+			
+			\setcounter{equation}{0}
+			
+			\begin{eqnarray}
+				\left| \frac{n}{n + 7^{1/2}} - L\right| < \epsilon \,\,\, (\forall n \geq \mathrm{N}) \,\,\, \mathrm{and} \,\,\, (\epsilon > 0)\\
+				\left| \frac{1}{1 + \frac{7^{1/2}}{n}} - L\right| < \epsilon 
+			\end{eqnarray}
+			}
+			
+			Dividing both numerator and denominator by n
+			
+			\begin{eqnarray}
+				1 + \frac{7^{1/2}}{n} > 1 \nonumber \\
+				\frac{1}{1 + \frac{7^{1/2}}{n}} < 1 
+			\end{eqnarray}
+			
+			Substituting the value of equation (3) in (2)
+			
+			\begin{eqnarray}
+				\left|1 - L \right| < \epsilon 
+			\end{eqnarray}
+			
+			We can clearly find $\epsilon > 0$ such that equation (4) is satisfied and hence the equation (1) will also be satisfied.\\
+			So there exists N $\in \mathbb{I}$ such that $\forall$ n $\geq$ N eq. (1) is satisfied.\\
+			$\lim \limits_{n \to \infty} \frac{n}{n+ 7^{1/2}} = 3$
+			
+			\item{$\lbrace \frac{3n}{n+7n^2} \rbrace_{n=1}^\infty$\\
+			Let the limit of the function exist and let it be L.\\
+			If the limit exists then the function will also satisfy the equation\\
+			
+			\setcounter{equation}{0}
+			\begin{eqnarray}
+				\left| \frac{3n}{n + 7n^2} - L \right| < \epsilon \,\,\, (\forall n \geq N)
+			\end{eqnarray}						
+			
+			\begin{center}
+				where N $\in \mathbb{I}$ and $\epsilon > 0$
+			\end{center}
+			
+			\begin{eqnarray}
+				\left| \frac{3}{1 + 7n} - L \right| < \epsilon 
+			\end{eqnarray}
+			
+			\begin{center}
+				Dividing numerator and denominator by n
+			\end{center}
+			
+			\begin{eqnarray}
+				1 + 7n > 7n \nonumber \\
+				\frac{1}{1+ 7n} < \frac{1}{7n} \nonumber \\
+				\frac{3}{1 + 7n} < \frac{3}{7n} 
+			\end{eqnarray}
+			
+			\begin{center}
+				Substituting equation (3) into (2)
+			\end{center}
+			
+			\begin{eqnarray}
+				\left| \frac{3}{7n} - L \right| < \epsilon 
+			\end{eqnarray}
+			\begin{center}
+				We can see that this resembles the series $\left\lbrace\frac{1}{n} \right\rbrace$ and hence can assume L=0 in equation (4)
+				
+				\begin{eqnarray}
+					\left| \frac{3}{7n} \right| < \epsilon \\
+					\frac{3}{7n} < \epsilon \nonumber \\
+					\frac{7n}{3} > \frac{1}{\epsilon} \nonumber \\
+					n > \frac{3}{7\epsilon}
+				\end{eqnarray}
+				
+				Now let us take N $\in \mathbb{I}$ where N $> \frac{3}{7\epsilon}$ for any $\epsilon > 0$.\\
+				So for n $\geq \mathrm{N}$ the equation (6) is satisfied and in conclusion equation (1) is also satisfied. So the limit for the function $\frac{3n}{n + 7n^2}$ exists.
+			\end{center}
+			}
+		\end{enumerate}			
+	}
+	
+	\item{\begin{enumerate}
+		\item{Prove that the sequence $\lbrace 10^7/n \rbrace_{n=1}^\infty$ has a limit 0.\\
+		To prove that the function has a limit L =0\\
+		$\lim \limits_{n \to \infty} \frac{10^7}{n} = 0$\\
+		Let the limit of the function exist and let $L =0$\\
+		So the function would satisfy the equation\\
+		\setcounter{equation}{0}
+
+		\begin{eqnarray}
+			\left| \frac{10^7}{n} - L \right| < \epsilon \,\,\, (\forall n \geq \mathrm{N})
+		\end{eqnarray}				
+
+		\begin{center}
+			where $\epsilon > 0$ and N $\in \mathbb{I}$ and N $>0$
+		\end{center} 
+		
+		\begin{eqnarray}
+			\left| \frac{10^7}{n}\right| < \epsilon \\
+			\frac{10^7}{n} < \epsilon \nonumber \\
+			\frac{n}{10^7} > \frac{1}{\epsilon} \nonumber \\
+			n > \frac{10^7}{\epsilon} 			
+		\end{eqnarray}
+		
+		If we take N $> \frac{10^7}{\epsilon}$, we will get $\forall$ n $\geq$ N and the equation (1) will be satisfied\\
+		Hence the limit for the function exists\\
+		$\lim \limits_{n \to \infty} \frac{10^7}{n} = 0$
+		}
+		
+		\item{Prove that $\lbrace n/10^7 \rbrace_{n=1}^\infty$ does not have a limit.\\
+			To prove: We have to prove that limit for $ \lbrace \frac{n}{10^7} \rbrace_{n=1}^\infty $ doesn't exist.\\
+			Let us assume that the limit of the function exists and it is L.\\
+			As teh Limit L exists the function will satisfy the equation :\\
+			
+			\setcounter{equation}{0}
+			\begin{eqnarray}
+				\left| \frac{n}{10^7} - L \right| < \epsilon \,\,\, \forall n \geq N
+			\end{eqnarray}					
+			
+			\begin{center}
+				Here L is the limit and N$>$0. N $\in \mathbb{I}$ and $\epsilon$ is an arbitrary positive rational number. 
+			\end{center}
+			Now as the limit exists we would be able to find some N for any arbitrary $\epsilon$ where equation (1) is satisfied.\\
+				Let $\epsilon = 1$ 
+				
+			\begin{eqnarray}
+				\left| \frac{n}{10^7} - L \right| < 1 \nonumber \\
+				\frac{n}{10^7} \in (L-1, L+1) \nonumber \\
+				n \in (10^7(L-1), 10^7(L+1))
+			\end{eqnarray}
+			
+			For any Limit value L that we take, we can find a value for n where equation (2) is not satisfied.\\
+			Hence our assumption that this function converges was wrong.\\
+			The series $ \lbrace \frac{n}{10^7} \rbrace_{n=1}^\infty $ clearly diverges
+		}
+		\item{Note that the first $10^7$ terms of the sequence in (a) are greater than the corresponding terms in sequence (b. This emphasizes that the existence of a limit for a sequence does not depend on the first few ('few' = any finite number of terms) terms.}
+	\end{enumerate} }
+	
+	\item{Prove that $\lbrace n-1/n \rbrace_{n=1}^\infty$ does not have a limit.\\
+		To prove : that series $ \lbrace n - 1/n \rbrace_{n=1}^\infty $	is divergent\\
+		We know that:
+		
+		\setcounter{equation}{0}
+		
+		\begin{eqnarray}
+			n - 1/n > \frac{n}{2} \,\,\,(\forall n \in \mathbb{N}) \,\,\, \mathrm{and} \,\,\, n > 1
+		\end{eqnarray}
+		
+		Now from (1) we can infer that if the sequence $ \lbrace \frac{n}{2} \rbrace_{n=1}^\infty $ is divergent then the given sequence $ \lbrace n-1/n \rbrace_{n=1}^\infty $ will also diverge.\\
+		We have previously proved that the sequence $ \lbrace n \rbrace_{n=1}^\infty $ is divergent.\\
+		Hence we can also state that $ \lbrace \frac{n}{2} \rbrace_{n=1}^\infty $ diverges using the property that\\
+		
+		\begin{eqnarray}
+			\lim \limits_{n \to \infty} \left\lbrace c \cdot s_n \right\rbrace = \lim \limits_{n \to \infty} c \left\lbrace s_n \right\rbrace 
+		\end{eqnarray}
+		
+		Hence we can state from (2) that $ \lbrace \frac{n}{2} \rbrace_{n=1}^\infty $ is divergent.\\
+		We can now state that sequence $ \lbrace n - 1/n \rbrace_{n=1}^\infty $ is also divergent\\
+		Hence proved
+	}
+	
+	\item{If $s_n = 5^n/n!$ show that $\lim \limits_{n \to \infty} s_n = 0$.\\
+	e can write $s_n$ as:\\
+	$$s_n = \frac{5 \cdot 5 \cdot 5 \cdots}{1 \cdot 2 \cdot 3 \cdot 4 \cdots}$$
+	$$s_n = \left( \frac{5}{1} \right) \cdot \left( \frac{5}{2} \right) \cdot \left(\frac{5}{3} \right) \cdot \left( \frac{5}{4} \right) \cdot \left( \frac{5}{5} \right) \cdot \left( \frac{5}{6} \right) \cdots$$
+	
+	We can write this as:\\
+	$$s_n = \frac{5^5}{5!} \Pi\frac{5}{n}$$
+	So, 
+	
+	\setcounter{equation}{0}
+	
+	\begin{eqnarray}
+		s_n < \frac{5^5}{5!} \cdot \frac{5}{n}
+	\end{eqnarray}		
+	
+	From equation (1) we can infer that $ \lbrace s_n \rbrace_{n=1}^\infty $ will be convergent if the series $ \lbrace \frac{5^5}{5!} \cdot \frac{5}{n} \rbrace_{n=1}^\infty $ is convergent.\\
+	Now we know that $ \lbrace 1/n \rbrace_{n=1}^\infty $ is a convergent series. (Proved above)\\
+	we also know that 
+	
+	\begin{eqnarray}
+		\lim \limits_{n \to \infty} c \cdot s_n = c \cdot \lim \limits_{n \to \infty} s_n
+	\end{eqnarray}
+	
+	using (2) we can state that the series $ \lbrace \frac{5^5}{5!} \cdot \frac{5}{n} \rbrace_{n=1}^\infty $ is convergent \\
+	We can then state that the series $ \lbrace s_n \rbrace_{n=1}^\infty $ \\
+	Hence proved
+	}
+	
+	\item{If P is a polynomial function of the third degree
+		\begin{align*}
+			P(x) = ax^3 + bx^2 + cx + d \,\, (a, b, c, d, x \in \mathbb{R})
+		\end{align*}	
+		Prove that
+		\begin{align*}
+			\lim \limits_{n \to \infty} \frac{P(n+1)}{P(n)} = 1
+		\end{align*}
+		
+		To prove : That limit exists and Limit L = 1.\\
+		We know that if the limit for any given function exists then it will satisfy the equation:
+		
+		\setcounter{equation}{0}
+		
+		\begin{eqnarray}
+			\left| \frac{P(n+1)}{P(n)} - L \right| < \epsilon \,\,\, (\forall n \geq N)
+		\end{eqnarray}						
+		
+		Here $\epsilon$ is an arbitrary constant and L is the value of the limit.\\
+		Here Limit, L =1.\\
+		N $\in \mathbb{I}$ and N $ > 0$\\\\
+		Now,
+		
+		\begin{eqnarray}
+			\left| \frac{P(n+1)}{P(n)} - 1 \right| < \epsilon \\
+			\left| \frac{a(n+1)^3 + b(n+1)^2 + c(n+1) + d}{an^3 + bn^2 + cn + d} - 1\right| < \epsilon \nonumber 
+		\end{eqnarray}
+		
+		\begin{center}
+			Substituting the value of the polynomial in the equation
+		\end{center}
+		
+		\begin{eqnarray}
+			\left| \frac{a (\frac{n+1}{n})^3 + b(\frac{n+1}{n})^2\frac{1}{n} + c(\frac{n+1}{n})\frac{1}{n^2} + d\frac{1}{n^3}}{a + b/n + c/n^2 + d/n^3} - 1\right| < \epsilon \nonumber	
+		\end{eqnarray}
+		
+		\begin{center}
+			Dividing Numerator and Denominator by $n^3$
+		\end{center}
+	}
+\end{enumerate}
+\clearpage
+
+\subsection{\exr \, 2.3}
+\fancyhead[R]{\slshape \exr \, 2.3}
+\begin{enumerate}
+\item{For any a, b $\in \mathbb{R}$ show that\\
+	\begin{align*}
+		\left| \left|a \right| - \left| b \right|\right| \leq \left| a - b\right|
+	\end{align*}
+	Then prove that $\lbrace \left|s_n\right| \rbrace_{n=1}^\infty$ converges to $\left| L \right|$ if $\lbrace s_n \rbrace_{n=1}^\infty$ converges to $ L$.
+}
+
+\item{Give an example of a sequence $\lbrace s_n \rbrace_{n=1}^\infty$ of real numbers for which $\lbrace \left| s_n \right| \rbrace_{n=1}^\infty$ converges but $\lbrace s_n \rbrace_{n=1}^\infty$ does not.\\
+	The sequence $ \lbrace (-1)^n \rbrace_{n=1}^\infty $ doesn't converge, but the sequence $ \lbrace \left| (-1)^n \right| \rbrace_{n=1}^\infty $ converges
+}
+
+\item{Prove that if $\lbrace \left| s_n \right|\rbrace_{n=1}^\infty$ converges to 0 then $\lbrace s_n \rbrace_{n=1}^\infty$ converges to 0.\\\\
+	We are given that $ \lbrace \left| s_n \right| \rbrace_{n=1}^\infty $ converges to 0 and we have to prove that $ \lbrace s_n \rbrace_{n=1}^\infty $ should also converge to 0.\\
+	To prove: $\lim \limits_{n \to \infty} s_n = 0$\\\\
+	Now let $s_n$ converge to 0 so it will satisfy the equation:
+	
+	\setcounter{equation}{0}
+	
+	\begin{eqnarray}
+		\left| s_n - 0 \right| < \epsilon \,\,\, (\forall n > N)
+	\end{eqnarray}
+	
+	Here $\epsilon$ is an arbitrary positive rational number and 0 is the limit of the sequence.\\
+	N $\in \mathbb{I}$ and also N $> 0$.\\\\
+	Now we know that $\left| \left| a \right| - \left| b \right| \right| \leq \left| a - b \right| $\\
+	It is also given that :
+	
+	\begin{eqnarray}
+		\left| \left| s_n \right| - 0 \right| < \epsilon \,\,\, (\mathrm{given})
+	\end{eqnarray}
+	
+	From equation (2) and the above mentioned identity we can infer that:
+	
+	\begin{eqnarray}
+		\left| \left| s_n \right| - \left|0 \right| \right| \leq \left| s_n - 0\right| 
+	\end{eqnarray}
+	
+	Plugging equation (3) in (1) we get that :
+	
+	\begin{eqnarray}
+		\left| s_n - 0 \right| < \epsilon \,\,\, (\mathrm{Standard\, Form\, of\, Limit\, Equation})
+	\end{eqnarray}
+	
+	Hence we can say that the series $ \lbrace s_n \rbrace_{n=1}^\infty $ is convergent and converges to 0.
+}
+
+\clearpage
+
+\item{Can you find a sequence of real numbers $\lbrace s_n \rbrace_{n=1}^\infty$ which has no convergent subsequence and yet $\lbrace\left| s_n \right|\rbrace_{n=1}^\infty$ converges?\\\\
+	If the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ has no convergent subsequence, then that implies that $ \lbrace s_n \rbrace_{n=1}^\infty $ is divergent to either positive or negative Infinity.
+	
+	If the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ is divergent to positive or negative infinity then $ \lbrace \left| s_n \right| \rbrace_{n=1}^\infty $ will also diverge to positive Infinity. \\
+	Hence such a case is not possible where $ \lbrace s_n \rbrace_{n=1}^\infty $ has no convergent subsequence but $ \lbrace \left| s_n \right| \rbrace_{n=1}^\infty $ converges.
+}
+
+\item{If $\lbrace s_n \rbrace_{n=1}^\infty$ is a sequence of real numbers and if
+	\begin{align*}
+		\lim \limits_{m \to \infty} s_{2m} = L\\
+		\lim \limits_{m \to \infty} s_{2m-1} = L
+	\end{align*}
+	prove that $s_n \to L $ as $n \to \infty$.\\
+	
+	It is given that terms with even subscripts converge to L as $n \to \infty$ and terms with odd terms also converge to L as $n \to \infty$. 
+	
+	We can say that $\lim \limits_{n \to \infty} s_n$ as $\lim \limits_{n \to \infty} s_{2m}$ where  $n = 2m$ for all even numbers.
+	
+	Similarly we can say that $\lim \limits_{n \to \infty} s_n$ as $\lim \limits_{n \to \infty} s_{2m-1}$ where $n = 2m-1$ for all odd numbers.
+	
+	We know that:
+	
+	\begin{align*}
+		\lim \limits_{m \to \infty} s_{2m} = L\\
+		\lim \limits_{m \to \infty} s_{2m-1} = L
+	\end{align*}
+	
+	So, we can conclusively say that $\lim \limits_{n \to \infty} s_n = L$\\
+	Hence proved.
+}
+
+\end{enumerate}
+\clearpage
+
+\subsection{\exr \, 2.4}
+\fancyhead[R]{\slshape \exr \, 2.4}
+\begin{enumerate}
+\item{Label each of the following sequences either (A) convergent. (B) divergent to infinity, (C) divergent to -Infinity, or (D) Oscillating
+	\begin{enumerate}
+		\item{$\left\lbrace \sin{n\pi/2} \right\rbrace_{n=1}^\infty$\\
+		(D) Oscillating}
+		\item{$\lbrace \sin{n\pi} \rbrace_{n=1}^\infty$\\
+		(A) Convergent}
+		\item{$\lbrace e^n \rbrace_{n=1}^\infty$ \\
+		(B) Divergent to $+ \infty$}
+		\item{$\lbrace e^{1/n} \rbrace_{n=1}^\infty$\\
+		(A) Convergent}
+		\item{$\lbrace n \sin (\pi/n) \rbrace_{n=1}^\infty$\\
+		(A) Convergent}
+		\item{$\lbrace (-1)^n \tan(\pi/2 - 1/n) \rbrace_{n=1}^\infty$\\
+		(D) Oscillating}
+		\item{$\left\lbrace 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots + \frac{1}{n}\right\rbrace_{n=1} ^ \infty$\\
+		(B) Divergent to $+ \infty$}
+		\item{$\lbrace -n^2 \rbrace_{n=1}^\infty$\\
+		(C) Divergent to $-\infty$}
+	\end{enumerate}
+} 
+
+\item{Prove that $\lbrace \sqrt{n} \rbrace_{n=1}^\infty$ diverges to Infinity.\\
+	To prove that the sequence $ \lbrace \sqrt{n} \rbrace_{n=1}^\infty $ diverges to $+ \infty$ we must prove that for any given $M > 0$ :
+	
+	\setcounter{equation}{0}
+	
+	\begin{eqnarray}
+		s_n > M \,\,\, (n \geq N)
+	\end{eqnarray}
+	
+	Here N $\in \mathbb{I}$ and N $> 0$\\
+	Now,
+	
+	\begin{eqnarray}
+		\sqrt{n} > M\\
+		n > M^2
+	\end{eqnarray}
+	
+	So for any N $> M^2$ will satisfy the equation (3) and hence satisfy (1). So we can conclusively say that the sequence $ \lbrace \sqrt{n} \rbrace_{n=1}^\infty $ diverges to $+\infty$.
+}
+
+\item{Prove that $\lbrace \sqrt{n+1} - \sqrt{n} \rbrace_{n=1}^\infty$ is convergent.\\
+	First let us simplify the expression
+	
+	\setcounter{equation}{0}
+	
+	\begin{eqnarray}
+		\sqrt{n+1} - \sqrt{n} \nonumber\\
+		\frac{(n+1) - n}{\sqrt{n+1} + \sqrt{n}} 
+	\end{eqnarray}
+	
+	\begin{center}
+		Rationalizing numerator and denominator\\
+		Further simplifying
+	\end{center}
+	
+	\begin{eqnarray}
+		\frac{1}{\sqrt{n+1} + \sqrt{n}} \nonumber \\
+	\end{eqnarray}
+	
+	We know that :
+	
+	\begin{eqnarray}
+		\sqrt{n+1} + \sqrt{n} > \sqrt{n} + \sqrt{n} \nonumber \\
+		\sqrt{n+1} + \sqrt{n} > 2\sqrt{n} \nonumber \\
+		\frac{1}{\sqrt{n+1} + \sqrt{n}} < \frac{1}{2\sqrt{n}}
+	\end{eqnarray}
+	
+	Now if the equation in (3) is convergent we can say that $ \lbrace \sqrt{n} \rbrace_{n=1}^\infty $ will also be convergent.
+	
+	$ \lbrace \frac{1}{\sqrt{n}} \rbrace_{n=1}^\infty $ is a bounded above series by 0. It is also monotonically decreasing as $\frac{1}{\sqrt{n-1}} > \frac{1}{\sqrt{n}} \forall n \in \mathbb{N}$.\\
+	As this series is both monotonically non-increasing as well as bounded above it is also convergent.\\
+	We also know that:
+	
+	\begin{eqnarray}
+		 \lim \limits_{n \to \infty} c \cdot s_n = c \cdot \lim \limits_{n \to \infty} s_n
+	\end{eqnarray}
+	
+	From (4) we can infer that $\lim \limits_{n \to \infty} \frac{1}{2\sqrt{n}}$ = $\frac{1}{2} \lim \limits_{n \to \infty} \frac{1}{\sqrt{n}} = 0$
+	
+	Now as $ \lbrace \frac{1}{2\sqrt{n}} \rbrace_{n=1}^\infty $ is convergent we also conclude that $ \lbrace \sqrt{n+1} - \sqrt{n} \rbrace_{n=1}^\infty $ is convergent.
+}
+
+\item{Prove that if the sequence of real numbers $\lbrace s_n \rbrace_{n=1}^\infty$ diverges to infinity, then $\lbrace -s_n \rbrace_{n=1}^\infty$ diverges to minus infinity.\\
+	It is given that the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ diverges to $+ \infty$. So we can write it mathematically as:
+	
+	\setcounter{equation}{0}
+	
+	\begin{eqnarray}
+		s_n > M \,\,\, (n \geq N)
+	\end{eqnarray}
+	
+	Here M $>0$ is an arbitrary constant and N $\in \mathbb{I}$ where N $>0$ is a term subscript where $s_n$ surpasses the value of M. Solving further :-
+	
+	\begin{eqnarray}
+		-s_n < -M \,\,\, (n \geq N)
+	\end{eqnarray}
+	
+	Now let the negative sequence be denoted by $ \lbrace -s_n \rbrace_{n=1}^\infty $. Let the sequence be represented by $S$.
+	
+	\begin{eqnarray}
+		S =  \lbrace -s_n \rbrace_{n=1}^\infty \nonumber \\
+		S < -M \,\,\, (n \geq N)
+	\end{eqnarray}
+	
+	Equation (3) is the standard form of a divergent series that diverges to $-\infty$. Hence $ \lbrace -s_n \rbrace_{n=1}^\infty $ diverges to $-\infty$ when $ \lbrace s_n \rbrace_{n=1}^\infty $ diverges tp $+ \infty$.
+}
+
+\item{Suppose $\lbrace s_n \rbrace_{n=1}^\infty$ converges to 0. Prove that $\lbrace (-1)^n s_n \rbrace_{n=1}^\infty$ converges to 0.\\
+	It is given that $ \lbrace s_n \rbrace_{n=1}^\infty $ converges to 0. We can also then state that $ \lbrace -s_n \rbrace_{n=1}^\infty $ converges to 0. As
+	
+	\setcounter{equation}{0}
+	
+	\begin{eqnarray}
+		\lim \limits_{n \to \infty} c \cdot s_n = c \cdot \lim \limits_{n \to \infty} s_n
+	\end{eqnarray}
+	
+	Using (1) $\lim \limits_{n \to \infty} -s_n$ $=$ $-\lim \limits_{n \to \infty} s_n=0$\\
+	Now, we can represent $ \lbrace s_n \rbrace_{n=1}^\infty $ as 
+	
+	\begin{eqnarray}
+	s_n = \left\lbrace s_1, s_2, s_3, s_4 \cdots \right\rbrace
+	\end{eqnarray}
+	
+	And we can represent$ \lbrace -s_n \rbrace_{n=1}^\infty $ as
+	
+	\begin{eqnarray}
+		-s_n = \left\lbrace -s_1, -s_2, -s_3 \cdots \right\rbrace
+	\end{eqnarray}
+	
+	Taking sub-sequences from (2) and (3) we get
+	
+	\begin{eqnarray}
+		\left\lbrace s_2, s_4, s_6 \cdots \right\rbrace \mathrm{and} \left\lbrace -s_1, -s_3, -s_5 \cdots \right\rbrace 
+	\end{eqnarray}	 
+	respectively	\\
+	
+	We know that sub-sequences of a convergent sequence are also convergent and they converge to the same value as their parent sequence.
+	
+	So limits for the sub-sequences (4) are 0.
+	
+	On combining the sub-sequences that we have created we create the sequence:
+	
+	\begin{eqnarray}
+		s_n = \left\lbrace -s_1, s_2, -s_3 \cdots \right\rbrace
+	\end{eqnarray}
+	
+	Hence $ \lbrace (-1)^ns_n \rbrace_{n=1}^\infty = \left\lbrace -s_1, s_2, -s_3 \cdots \right\rbrace$. This sequence has been formed by the combination of 2 convergent sub-sequences that are convergent to the same value 0, and hence $ \lbrace (-1)^ns_n \rbrace_{n=1}^\infty $ is also convergent.
+}
+
+\item{Suppose $\lbrace s_n \rbrace_{n=1}^\infty$ converges to L $\neq$ 0. Prove that $\lbrace (-1)^ns_n \rbrace_{n=1}^\infty$ oscillates.\\
+	Similar to the above example we can state that the series $ \lbrace -s_n \rbrace_{n=1}^\infty $ will also converge. We know that:
+	
+	\setcounter{equation}{0}
+	
+	\begin{eqnarray}
+		\lim \limits_{n \to \infty} c\cdot s_n = c \cdot \lim \limits_{n \to \infty} s_n
+	\end{eqnarray}
+	
+	From (1) we can deduce that $\lim \limits){n \to \infty} -s_n = -\lim \limits_{n \to \infty} s_n = -L$
+	
+	Both these series can now be represented as :-
+	
+	\begin{eqnarray}
+		\lbrace s_n \rbrace_{n=1}^\infty = \left\lbrace s_1, s_2, s_3 \cdots \right\rbrace \\
+		\lbrace -s_n \rbrace_{n=1}^\infty = \left\lbrace -s_1, -s_2, -s_3 \cdots \right\rbrace
+	\end{eqnarray}
+	
+	We know that sub-sequences of convergent sequences are convergent hence both the sub-sequences (2) and (3) will be convergent. Sequence (2) will converge to L and sequence (3) will converge to -L.
+	
+	Now let us create a sequence by the combination of these sub-sequences:
+	
+	\begin{eqnarray}
+		 \lbrace (-1)^ns_n \rbrace_{n=1}^\infty = \left\lbrace -s_1, s_2, -s_3 \cdots \right\rbrace 
+	\end{eqnarray}
+	
+	Clearly (4) will oscillate as it's sub-sequences are converging to different points L $\neq$ -L.
+}
+
+\item{Suppose $\lbrace s_n \rbrace_{n=1}^\infty$ diverges to infinity. Prove that $\lbrace (-1)^ns_n \rbrace_{n=1}^\infty$ oscillates.\\
+	From example 6 above it can be proved that any sequence $ \lbrace (-1)^ns_n \rbrace_{n=1}^\infty $ oscillates if $\lim \limits_{n \to \infty} = L$ where L$\neq 0$.
+	
+	In this question it is given that $\lim \limits_{n =to \infty} s_n $ diverges to positive infinity, or $\lim \limits_{n \to \infty} s_n = L $ where $L \neq 0$.
+	
+	So it is evident that $ \lbrace (-1)^ns_n \rbrace_{n=1}^\infty $ will oscillate. 
+}
+\end{enumerate}
+\clearpage
+
+\subsection{\exr \, 2.5}
+\fancyhead[R]{\slshape \exr \, 2.5}
+\begin{enumerate}
+\item{True or false? If a sequence of positive numbers is not bounded then the sequence diverges to infinity.\\
+	False, it isn't necessary that the sequence will diverge to $\infty$.
+}
+
+\item{Give an example of a sequence $\lbrace s_n \rbrace_{n=1}^\infty$ which is not bounded but for which $\lim \limits_{n \to \infty} s_n = 0$.\\
+	The sequence $ \lbrace e^{-x^2}\tan{x} \rbrace_{n=1}^\infty $ converges to 0 as $n \to \infty$ but it isn't bounded.
+}
+
+\item{Prove that if $\lim \limits_{n \to \infty} s_n / n = L \neq 0$ then $\lbrace s_n \rbrace_{n=1}^\infty$ is not bounded.\\
+	The sequence $ \lbrace s_n/n \rbrace_{n=1}^\infty $ is convergent and $\lim \limits_{n \to \infty} s_n/n = L \neq 0$. Now, 
+	
+	\setcounter{equation}{0}
+	
+	\begin{eqnarray}
+		\lim \limits_{n \to \infty} s_n = \lim \limits_{n \to \infty} n \cdot\left( \lim \limits_{n \to \infty} s_n/n \right)\\
+		\lim \limits_{n \to \infty} s_n = \lim \limits_{n \to \infty} n \cdot L
+	\end{eqnarray}
+	
+	From (2) we can clearly see that $ \lbrace s_n \rbrace_{n=1}^\infty $ is divergent and is diverging to positive $\infty$. As the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ is diverging hence it will not be bounded from theorem 2.5B
+}
+
+\item{If $\lbrace s_n \rbrace_{n=1}^\infty$ is a bounded sequence of real numbers, and $\lbrace t_n \rbrace_{n=1}^\infty$ converges to 0, prove that $\left\lbrace s_n t_n\right\rbrace_{n=1}^\infty$ converges to 0.\\
+	Let us take some arbitrary $\epsilon > 0$.
+	
+	Now we know that the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ is a bounded sequence so:
+	
+	\setcounter{equation}{0}
+	
+	\begin{eqnarray}
+		\left| s_n \right| \leq M \,\,\, ( M > 0)
+	\end{eqnarray}
+	
+	We also know that $ \lbrace t_n \rbrace_{n=1}^\infty $ converges to 0, so
+	
+	\begin{eqnarray}
+		\left| t_n \right| < \epsilon / M \,\,\, (n \geq \mathrm{N})
+	\end{eqnarray}
+	
+	Here N $\in \mathbb{I}$ and N $> 0$. Equation (2) will be true for some value of N.
+	
+	Now we can achieve 
+	
+	\begin{eqnarray}
+		\left| s_n \cdot t_n \right| < \epsilon \,\,\, (n \geq \mathrm{N})\nonumber \\
+		\left| s_n \cdot t_n - 0 \right| < \epsilon \,\,\, (n \geq \mathrm{N})
+	\end{eqnarray}
+	
+	Equation (3) is the standard equation for limit and we can clearly see that the series $ \lbrace s_n \cdot t_n \rbrace_{n=1}^\infty $ converges to 0. 
+}
+
+\clearpage
+
+\item{If the sequence $\lbrace s_n \rbrace_{n=1}^\infty$ is bounded, prove that for any $\epsilon > 0$ there is a closed interval $J \subset R$ of length $\epsilon$ such that $s_n \subset J$ for infinitely many values of n.\\\\
+	It is given that the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ is bounded, so
+	
+	\setcounter{equation}{0}
+	
+	\begin{eqnarray}
+		\left| s_n \right| \leq M \,\,\, (\mathrm{for \, some \,} M >0)
+	\end{eqnarray}
+	
+	Now the sequence is bounded between $[-M. M]$ and the terms of the sequence can be expresses as 
+	
+	\begin{eqnarray}
+		\lbrace s_n \rbrace_{n=1}^\infty = \left\lbrace s_1, s_2, s_3 \cdots \right\rbrace
+	\end{eqnarray}
+	
+	The number of terms inside $[-M, M]$ are countably infinite. Our region is of length $2M$. Let us divide that into 2 parts of length $2M - \rho$ and $\rho$ such that each part has respectively $N_1$ and $N_2$ terms where total terms are N.
+	
+	\begin{eqnarray}
+		N = N_1 + N_2
+	\end{eqnarray}
+	
+	We know that N is countably infinite, so from (3) we can infer that both $N_1$ and $N_2$ are countably infinite or one of them is. If either of them is countably infinite, we will obtain a set J $\in \mathbb{R}$ of finite arbitrary length $\epsilon$, such that it contains infinite elements.
+}
+
+\end{enumerate}
+\clearpage
+
+\subsection{\exr \, 2.6}
+\fancyhead[R]{\slshape \exr \, 2.6}
+\begin{enumerate}
+\item{Which of the following sequences are Monotone?
+	\begin{enumerate}
+		\item{$ \lbrace \sin{n} \rbrace_{n=1}^\infty $}
+		\item{$ \lbrace \tan{n} \rbrace_{n=1}^\infty $}
+		\item{$ \lbrace \frac{1}{1+n^2} \rbrace_{n=1}^\infty $}
+		\item{$ \lbrace 2n + (-1)^n \rbrace_{n=1}^\infty $}
+		
+		The sequences (c) and (d) are monotonic.
+	\end{enumerate}
+}
+
+\item{If $ \lbrace s_n \rbrace_{n=1}^\infty $ is nondecreasing and bounded above and L = $\lim \limits_{n \to \infty} s_n$, prove that $s_n \leq L$ (n $\in I$).\\\\
+	It is given that the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ is bounded above , hence there will be an M $>0$ such that
+	
+	\setcounter{equation}{0}
+	
+	\begin{eqnarray}
+		M = l.u.b \left\lbrace s_1, s_2, s_3 \cdots \right\rbrace
+	\end{eqnarray}
+	
+	Now we will prove that this upper bound M is also the limit of the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $. Now for any arbitrary $\epsilon > 0$, we know that $M - \epsilon$ is not an upper bound so for some N $\in \mathbb{I}$
+	
+	\begin{eqnarray}
+		s_n > M - \epsilon \,\,\, (n \geq N)
+	\end{eqnarray}
+	
+	For some value of n. Now we know that $M$ is the upper bound of $ \lbrace s_n \rbrace_{n=1}^\infty $. So
+	
+	\begin{eqnarray}
+		s_n \leq M \,\,\, (\forall n \in \mathbb{N})
+	\end{eqnarray}
+	
+	Now combining (2) and (3), we get:-
+	
+	\begin{eqnarray}
+		\left| s_n - M \right| < \epsilon \,\,\, (n \geq N)
+	\end{eqnarray}
+	
+	This is the standard for of the limit equation and this indicates that $\lim \limits_{n \to \infty} s_n = M$. Now we are also given that $\lim \limits_{n \to \infty} s_n=L$.
+	
+	We know that there cannot be multiple limits for the same sequence that is convergent and hence $M = L$. This shows that the limit of the sequence was the upper bound and hence 
+	
+	\begin{eqnarray}
+		s_n \leq L \nonumber 
+	\end{eqnarray}
+}
+
+\clearpage
+
+\item{If $ \lbrace s_n \rbrace_{n=1}^\infty $ and $ \lbrace t_n \rbrace_{n=1}^\infty $are non-decreasing bounded sequences, and if $s_n \leq t_n$ (n $\in I$), prove that $\lim \limits_{n \to \infty} s_n \leq \lim \limits_{n \to \infty} t_n$. \\\\
+	Let the l.u.b for the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ be $M_1$ and the l.u.b for the sequence $ \lbrace t_n \rbrace_{n=1}^\infty $ be $M_2$.
+	
+	Now we know that l.u.b of any sequence $ \lbrace s_n \rbrace_{n=1}^\infty =$ max($s_1, s_2, s_3 \cdots$).
+	
+	So, $M_1$ = max($s_1, s_2, s_3 \cdots$) and\\
+	$M_2$ = max($t_1,  t_2, t_3 \cdots$)
+	
+	We also know that $s_n < t_n \,\, \forall n \in \mathbb{I}$\\
+	So, max($s_n$) $<$ max($t_n$) and hence $M_1 < M_2$
+	
+	Now we also know that if a sequence is bounded above and monotonically non-decreasing, then the l.u.b of the sequence is the limit of that sequence. That is 
+	
+	\setcounter{equation}{0}
+	
+	\begin{eqnarray}
+		\lim \limits_{n \to \infty} s_n = M_1 \\
+		\lim \limits_{n \to \infty} t_n = M_2
+	\end{eqnarray}
+	
+	We know that $M_1 < M_2$, hence $\lim \limits_{n \to \infty} s_n$ $<$ $\lim \limits_{n \to \infty} t_n$.\\
+	Hence proved.
+}
+
+\item{Find the limit of $ \lbrace n^{-n-1}(n+1)^n \rbrace_{n=1}^\infty $.\\\\
+	The sequence $ \lbrace n^{-n-1}(n+1)^n \rbrace_{n=1}^\infty $ can be further simplified to:
+	
+	\setcounter{equation}{0}
+	
+	\begin{eqnarray}
+		s_n = \left(\frac{n+1}{n} \right)^n \cdot \frac{1}{n} \\
+		s_n = \left( 1 + \frac{1}{n} \right)^n \cdot \frac{1}{n}	
+	\end{eqnarray}
+	
+	\begin{center}
+		Expanding the Binomial of the terms
+	\end{center}
+	
+	\begin{eqnarray}
+		s_n = \left(1 + \frac{C_1}{n} + \frac{C_2}{n^2} + \frac{C_3}{n^3}\cdots \right) \cdot \frac{1}{n} \\
+		s_n = \left( 1+ 1 + \frac{n(n-1)}{2} + \cdots + \frac{n(n-1) \cdots1}{1 \cdot 2 \cdot 3 \cdots n} \cdot \frac{1}{n^n} \right) \cdot \frac{1}{n}
+	\end{eqnarray}
+	
+	For $k=1 \cdots n $, the $k^{\mathrm{th}}$ terms on the right are
+
+	\begin{eqnarray}
+		\frac{n(n-1)(n-2) \cdots (n-k+1)}{1 \cdot 2 \cdots k} \cdot \frac{1}{n^k}\cdot \frac{1}{n}
+	\end{eqnarray}
+	
+	which equals
+	
+	\begin{eqnarray}
+		\frac{1}{1 \cdot2 \cdots k} \left( 1 - \frac{1}{n}\right) \left( 1 - \frac{2}{n}\right)\cdots \left( 1 - \frac{k-1}{n}\right)\frac{1}{n}
+	\end{eqnarray}
+	
+	If we expand $s_{n+1}$ we obtain n+2 terms (One more for $s_n$) and, for $k=1 \cdots n$, the $(k+1)$st term is
+	
+	\begin{align*}
+		\frac{1}{1 \cdot2 \cdots k} \left( 1 - \frac{1}{n+1}\right) \left( 1 - \frac{2}{n+1}\right)\cdots \left( 1 - \frac{k-1}{n+1}\right) \frac{1}{n}
+	\end{align*}
+	
+	which is greater than or equal to the quantity (1). This shows that $s_{n+1} \leq s_{n}$. That is $ \lbrace s_n \rbrace_{n=1}^\infty $ is monotonically non-increasing. And also :
+	
+	\begin{eqnarray}
+		s_n < \left(1 + 1 + \frac{1}{1\cdot 2} + \frac{1}{1 \cdot 2 \cdot 3} + \cdots \right) \cdot \frac{1}{n}
+	\end{eqnarray}
+	
+	$s_n$ is bounded below by 0 and that is it's lower bound. As the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ is monotonically non-increasing a well as bound below by it's g.l.b 0. It has a limit and \\
+	$\lim \limits_{n \to \infty} n^{-n-1}(n+1)^n = 0$
+}
+
+\item{If $s_n = 10/n!$ find $N \in I$ such that
+	\begin{align*}
+		s_{n+1} < s_n \,\,\,\, (n \geq N)
+	\end{align*}
+	
+	We have to find $s_{n+1}$ such that $s_{n+1} < s_n$.
+	
+	\setcounter{equation}{0}
+	
+	\begin{eqnarray*}
+		s_{n+1} < s_n \\
+		\frac{10}{(n+1)!} < \frac{10}{n!} \\
+		\frac{1}{(n+1)!} < \frac{1}{n!} \\
+		(n+1)! > n! \\
+		n+1 > 1 \\
+		n > 0
+	\end{eqnarray*}
+	
+	So for all values of $n \in \mathbb{I}$ the equation is satisfied and $s_{n+1} < s_n$. This sequence is strictly monotonically non-increasing. We can take value of N as 1.
+}
+
+\item{For $n \in I$, let
+	\begin{align*}
+		s_n = \frac{1 \cdot 3 \cdot 5 \cdots (2n-1)}{2 \cdot 4 \cdot 6 \cdots 2n}
+	\end{align*}
+	Prove that $ \lbrace s_n \rbrace_{n=1}^\infty $ is convergent and $\lim \limits_{n \to \infty} s_n \leq 1/2$\\\\
+	
+	To prove that the series $ \lbrace s_n \rbrace_{n=1}^\infty $ where\\
+	\begin{eqnarray}
+		\lbrace s_n \rbrace_{n=1}^\infty  = \frac{1 \cdot 3 \cdot 5 \cdots (2n-1)}{2 \cdot 4 \cdot 6 \cdots 2n}
+	\end{eqnarray} 
+	
+	is convergent, we must prove that $ \lbrace s_n \rbrace_{n=1}^\infty $ is monotonic and that it is bounded.
+	
+	We know that the series $ \lbrace s_n \rbrace_{n=1}^\infty $ consists of positive real quantities, hence
+	
+	\begin{eqnarray}
+		s_n \geq 0
+	\end{eqnarray}
+	
+	From (2), we can say that the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ is bounded below. Now we also know that 
+	
+	\begin{eqnarray}
+		2 > 1 \nonumber \\
+		4 > 3 \nonumber \\
+		6 > 5 \nonumber \\
+		. \nonumber \\
+		. \nonumber \\
+		. \nonumber \\
+		2n > 2n - 1 \\
+		\prod_{k=1}^n 2n > \prod_{k=1}^n 2n-1
+	\end{eqnarray}
+	
+	\begin{center}
+		From (4) we can further say that
+	\end{center}
+	
+	\begin{eqnarray}
+		\displaystyle {\frac{\prod 2n-1}{\prod 2n} }< 1 \\
+		s_n < 1
+	\end{eqnarray}
+	
+	Hence from (6) we can say that $ \lbrace s_n \rbrace_{n=1}^\infty $ is also bounded above. As $ \lbrace s_n \rbrace_{n=1}^\infty $ is bounded below and bounded above $ \lbrace s_n \rbrace_{n=1}^\infty $ is a bounded sequence.\\
+	
+	Now we have to prove that $ \lbrace s_n \rbrace_{n=1}^\infty $ is a monotonic sequence. We know that
+	
+	\begin{eqnarray}
+		s_n = \frac{1 \cdot 3 \cdot 5 \cdots (2n-1)}{2 \cdot 4 \cdot 6 \cdots 2n} \\
+		s_n = \left( \frac{1 \cdot 3 \cdot 5 \cdots (2n-3)}{2 \cdot 4\cdot 6 \cdots (2n-2)} \right) \cdot \frac{2n-1}{2n} \\
+		s_n = s_{n-1} \cdot \frac{2n-1}{2n}
+	\end{eqnarray}
+	
+	\begin{center}
+		Now, we also know that $\forall n \in \mathbb{I}$
+	\end{center}
+	
+	\begin{eqnarray}
+		2n-1 < 2n \nonumber \\
+		\frac{2n-1}{2n} < 1 \nonumber \\
+		s_{n-1} \cdot \frac{2n-1}{2n} < s_{n-1} 
+	\end{eqnarray}
+	
+	\begin{center}
+		From (9) and (10), we can say that
+	\end{center}
+	
+	\begin{eqnarray}
+		s_n < s_{n-1}
+	\end{eqnarray}
+	
+	Hence the series $ \lbrace s_n \rbrace_{n=1}^\infty $ is strictly monotonically non-increasing and as this series is also bounded, from the monotonic Theorem we can say that the series $ \lbrace s_n \rbrace_{n=1}^\infty $ is convergent.
+	
+	Now we also know that 
+	
+	\begin{eqnarray}
+		s_1 = \frac{1}{2} \\
+		\mathrm{and \space} s_2 < s_1 \space \mathrm{From \space (11)} \\
+		\mathrm{similarly \space} s_3 < s_2 < s_1 \nonumber \\
+		. \nonumber \\
+		. \nonumber \\
+		. \nonumber \\
+		s_n < s_{n-1} < \cdots < s_1 \space \mathrm{From \space (11) \space and \space (13)} \\
+		s_n \leq \frac{1}{2} \space \mathrm{From \space (14) \space and \space (12)}
+	\end{eqnarray}
+	
+	From (15) we can say that
+	
+	\begin{align*}
+		s_n \leq  \frac{1}{2}
+	\end{align*}
+}
+
+\item{For $n \in I$, let
+	\begin{align*}
+		s_n = \frac{2 \cdot 4 \cdot 6 \cdots 2n}{1 \cdot 3 \cdot 5 \cdots (2n-1)} \cdot \frac{1}{n^2}
+	\end{align*}
+	Verify that $s_1 > s_2 > s_3$. Prove that $ \lbrace s_n \rbrace_{n=1}^\infty $ is non-increasing.\\
+	
+	We have to prove that $ \lbrace s_n \rbrace_{n=1}^\infty $ where 
+	
+	\setcounter{equation}{0}
+	
+	\begin{eqnarray}
+		s_n = \frac{2 \cdot 4 \cdot 6  \cdots 2n}{1 \cdot 3 \cdot 5 \cdots (2n-1)} \cdot \frac{1}{n^2}
+	\end{eqnarray}
+	
+	is strictly non-increasing or monotonically strictly non-increasing. To do that we can rewrite $ \lbrace s_n \rbrace_{n=1}^\infty $ as 
+	
+	\begin{eqnarray}
+		s_n = \frac{\prod 2n}{\prod 2n-1} \cdot \frac{1}{n^2} \\
+		\mathrm{Now} \nonumber \\
+		s_{n+1} = \frac{\displaystyle{\prod^{n+1} 2n}}{\displaystyle{\prod^{n+1} 2n-1}} \cdot \frac{1}{(n+1)^2} \\
+		s_{n+1} = \frac{\displaystyle{\prod^n 2n}}{\displaystyle{\prod^n 2n-1}} \cdot \frac{1}{n^2}\cdot \frac{2n+2}{2n + 1} \cdot \left( \frac{n}{n+1} \right)^2
+	\end{eqnarray}
+	
+	\begin{center}
+		From (2) we can rewrite this as 
+	\end{center}
+	
+	\begin{eqnarray}
+		s_{n+1} = s_n \cdot \frac{2n+2}{2n+1} \cdot \left( \frac{n}{n+1} \right)^2
+	\end{eqnarray}
+	
+	We know that that $\forall n \in \mathbb{I}$
+	
+	\begin{eqnarray}
+		2n^3 + 2n^2 < 2n^3 + 5n^2 + 4n + 1 \\
+		\frac{2n^3 + 2n^2}{2n^3 + 5n^2 + 4n + 1} < 1 \\
+		\mathrm{On \space simplifying \space} \frac{2n+2}{2n+1} \cdot \left( \frac{n}{n+1} \right)^2 < 1\\
+		\mathrm{Putting \space (8) \space in \space (5)} \nonumber \\
+		s_{n+1} < s_n
+	\end{eqnarray}
+	
+	From (9), we can clearly se that the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ is strictly monotonically non-increasing.
+	
+	Now we can also show that 
+	
+	\begin{align*}
+		s_1 = 2 \\
+		s_2 = \frac{2 \cdot 4}{1 \cdot 3} \cdot \frac{1}{2^2} = \frac{8}{3} \cdot\frac{1}{4} = \frac{2}{3} \approx 0.667 \\
+		\mathrm{Clearly \space} s_2 < s_1 \\
+		s_3 = \frac{2 \cdot 4 \cdot 6}{1 \cdot 3 \cdot 5} \cdot \frac{1}{3^2} = \frac{16}{5} \cdot \frac{1}{9} \approx 0.355 \\
+		\mathrm{Clearly \space} s_3 < s_2 < s_1
+	\end{align*}
+	
+	Hence Proved
+}
+
+\clearpage
+
+\item{For $n \in I$, let
+	\begin{align*}
+		t_n = 1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \cdots + \frac{1}{n!}.	
+	\end{align*}
+	
+	\begin{enumerate}
+		\item{Prove that $ \lbrace t_n \rbrace_{n=1}^\infty $ is non-decreasing}
+		\item{Using only facts established in the proof 2.6C, prove that $ \lbrace t_n \rbrace_{n=1}^\infty $ is bounded above and then prove $\lim \limits_{n \to \infty} t_n \geq \lim \limits_{n \to \infty} (1 + 1/n)^n$.}
+	\end{enumerate} 
+	
+	Firstly we have to prove that $ \lbrace t_n \rbrace_{n=1}^\infty $ is non-decreasing. We know that 
+	
+	\setcounter{equation}{0}
+	
+	\begin{eqnarray}
+		t_n = 1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \cdots + \frac{1}{n!} \\
+		t_{n+1} = 1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \cdots + \frac{1}{n!} + \frac{1}{(n+1)!}\\
+		\mathrm{Substituting \space (1) \space into \space (2)} \nonumber \\
+		t_{n+1} = t_n + \frac{1}{n!} \\
+		\mathrm{We \space know \space that} \nonumber \\
+		\frac{1}{n!} > 0 \space \forall n \in \mathbb{I} \\
+		t_n + \frac{1}{n!} > t_n \space \forall n \in \mathbb{I} \\
+		\mathrm{From \space (3) \space we \space get} \nonumber \\
+		t_{n+1} > t_n \forall n \in \mathbb{I}
+	\end{eqnarray}
+	
+	Hence, from (6) we can say that the sequence $ \lbrace t_n \rbrace_{n=1}^\infty $ is strictly non-decreasing
+}
+
+\item{Let $\zeta$ denote the class of all sequences of real numbers. Let $\gamma$ denote the class of all convergent sequences and $\xi$ the class of all divergent sequences. Further let $\xi_P$ and $\xi_M$ denote the classes of sequences that diverge to plus infinity and minus infinity, respectively. Let $\varrho$ denote the class of oscillating sequences. Finally. let $\beta$ denote the class of all bounded sequences and let $\varpi$ denote the class of all monotone sequences.\\ By citing the proper definitions and theorums, verify the following statements.
+	\begin{enumerate}
+		\item{$\zeta = \gamma \cup \xi$}
+		\item{$\xi =  \xi_P \cup \xi_M \cup \varrho$}
+		\item{$\gamma \subset \beta$}
+		\item{$\varpi \cap \beta \subset \gamma$}
+		\item{$\varpi \cap \beta^{'} \subset \xi_P \cup \xi_M$}
+		\item{$\beta \cap \xi_P = \phi$}
+	\end{enumerate}
+}
+
+\end{enumerate}
+\clearpage
+
+\subsection{\exr \, 2.7}
+\fancyhead[R]{\slshape \exr \, 2.7}
+
+\begin{enumerate}
+\item{Prove
+	\begin{enumerate}
+		\item{$\displaystyle{\lim \limits_{n \to \infty} \frac{2n^3+5n}{4n^3+n^2}=\frac{1}{2}}$ \\\\
+			Dividing numerator and denominator by $n^3$
+			
+			\setcounter{equation}{0}
+			
+			\begin{eqnarray}
+				\frac{2 + 5/n^2}{4 + 1/n}
+			\end{eqnarray}					
+			
+			We have proved previously that $\lim \limits_{n \to \infty} 1/n = 0$, and we also know that 
+			
+			\begin{eqnarray}
+				\lim \limits_{n \to \infty} s_n \cdot t_n = \lim \limits_{n \to \infty} s_n \cdot \lim \limits_{n \to \infty} t_n \\
+				\mathrm{So, } \nonumber \\
+				\lim \limits_{n \to \infty} 1/n^2 = \lim \limits_{n \to \infty} 1/n \cdot \lim \limits_{n \to \infty} 1/n = 0 \\
+				\mathrm{We \space know \space that} \nonumber  \\
+				\lim \limits_{n \to \infty} c \cdot s_n = c \cdot \lim \limits_{n \to \infty} s_n \\
+				\mathrm{Now \space we \space can \space also \space that \space from \space (4)} \nonumber \\
+				\lim \limits_{n \to \infty} 5/n^2 = 5 \cdot \lim \limits_{n \to \infty} 1/n^2 = 0 \\
+				\mathrm{We \space know \space that} \nonumber \\
+				\lim \limits_{n \to \infty} s_n + t_n = \lim \limits_{n \to \infty} s_n + \lim \limits_{n \to \infty} t_n \\
+				\mathrm{From \space (6)} \nonumber \\
+				\lim \limits_{n \to \infty} 2 + 5/n^2 = \lim \limits_{n \to \infty} 2 + \lim \limits_{n \to \infty} 5/n^2  \\
+				\we \nonumber \\
+				\lim \limits_{n \to \infty} 1 = 1 \\
+				\mathrm{So, } \lim \limits_{n \to \infty} 2 = 2 \cdot 1 = 2 \nonumber \\
+				\lim \limits_{n \to \infty} 2 + 5/n^2 = 2 \\
+				\mathrm{Similarly, } \nonumber \\
+				\lim \limits_{n \to \infty} 4 + 1/n = 4 \\
+				\we \nonumber \\
+				\lim \limits_{n \to \infty} \frac{s_n}{t_n} = \frac{\lim \limits_{n \to \infty} s_n}{\lim \limits_{n \to \infty} t_n} \\
+				\from \mathrm{(11)} \nonumber \\
+				\lim \limits_{n \to \infty} \frac{2+5/n^2}{4+1/n} = \frac{\lim \limits_{n \to \infty} 2 + 5/n^2}{\lim \limits_{n \to \infty} 4 + 1/n}	\\
+				\lim \limits_{n \to \infty} \frac{2+5/n^2}{4+1/n} = \frac{2}{4} = 1/2 \nonumber		
+			\end{eqnarray}
+			
+			Hence Proved
+		}
+		\clearpage
+		\item{$\displaystyle{\lim \limits_{n \to \infty} \frac{n^2}{(n-7)^2-6} = 1}$
+			\begin{center}
+				Simplifying the equation
+			\end{center}				
+			
+			\setcounter{equation}{0}
+			
+			\begin{eqnarray}
+				\lim \limits_{n \to \infty} \frac{n^2}{n^2 -14n +49 -6} \\
+				\lim \limits_{n \to \infty} \frac{n^2}{n^2 -14n +43} \\
+				\mathrm{Dividing \space Numerator \space and \space denominator \space by } n^2 \nonumber \\
+				\lim \limits_{n \to \infty} \frac{1}{1 - 14/n + 43/n^2} \\
+				\we \nonumber \\
+				\lim \limits_{n \to \infty} 1/n = 0 \mathrm{\spacem and} \\
+				\lim \limits_{n \to \infty} c \cdot s_n = c\cdot \lim \limits_{n \to \infty} s_n \\
+				\mathrm{Hence} \nonumber \\
+				\lim \limits_{n \to \infty} -14/n = -14 \lim \limits_{n \to \infty} 1/n = 0 \\
+				\we \nonumber \\
+				\lim \limits_{n \to \infty} s_n \cdot t_n = \lim \limits_{n \to \infty} s_n \cdot \lim \limits_{n \to \infty} t_n \\
+				\lim \limits_{n \to \infty} 1/n^2 = \left( \lim \limits_{n \to \infty} 1/n\right)^2 \\
+				\mathrm{Hence} \nonumber \\
+				\lim \limits_{n \to \infty} 1/n^2 = 0 \\
+				\mathrm{Now, \space} \from \mathrm{(5)} \nonumber \\
+				\lim \limits_{n \to \infty} 43/n^2 = 43 \lim \limits_{n \to \infty} 1/n^2 = 0 \\
+				\wealso \nonumber \\
+				\lim \limits_{n \to \infty} 1 = 1 \\
+				\mathrm{Now, \space} \from \mathrm{(6), (10) \space and \space (11)}\nonumber \\
+				\lim \limits_{n \to \infty} 1 - 14/n + 43/n^2 = 1 - 0 + 0 = 1 \\
+				\we \nonumber \\
+				\lim \limits_{n \to \infty} s_n / t_n = \frac{\lim \limits_{n \to \infty} s_n}{\lim \limits_{n \to \infty} t_n} \\
+				\from \mathrm{(13)} \nonumber \\
+				\lim \limits_{n \to \infty} \frac{1}{1 -14/n + 43/n^2} = 1 \nonumber 
+			\end{eqnarray}		
+			
+			\begin{align*}
+				\hence
+			\end{align*}					
+		}
+	\end{enumerate}
+}
+\clearpage
+
+\item{Prove that if $ \lbrace s_n \rbrace_{n=1}^\infty $ converges to 1 then $ \lbrace s_n^{1/2} \rbrace_{n=1}^\infty $ converges to 1.\\\\
+	The question asks us to prove that is the series $ \lbrace s_n \rbrace_{n=1}^\infty $ is converging to one then $ \lbrace s_n^{1/2} \rbrace_{n=1}^\infty $ must also converge to 1, but I shall prove a much more general statement, that is :\\
+	If a sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ is convergent and $ \lbrace s_n \rbrace_{n=1}^\infty $ converges to L, then the series $ \lbrace s_n^{1/2} \rbrace_{n=1}^\infty $ must also be convergent and will converge to $\sqrt{L}$. \\\\
+	To prove: that $ \lbrace s_n^{1/2} \rbrace_{n=1}^\infty $ converges to $\sqrt{L}$. If a sequence is convergent then: \\
+	For $\exists \epsilon \in \mathbb{R}$ such that $\epsilon > 0$ for which $\exists N \in \mathbb{I}$, such that $\forall n \in \mathbb{R}$ where $n \geq N$. If we can find such N, then we can call $ \lbrace s_n^{1/2} \rbrace_{n=1}^\infty $ convergent. 
+	\setcounter{equation}{0}	
+	\begin{eqnarray}
+		\left| \sqrt{s_n} - \sqrt{L} \right| < \epsilon \spacem \forall n \geq N
+	\end{eqnarray}
+	is satisified.
+	
+	\begin{center}
+		Rationalizing
+	\end{center}
+	\begin{eqnarray}
+		\left| \frac{(\sqrt{s_n} - \sqrt{L})(\sqrt{s_n} + \sqrt{L})}{\sqrt{s_n} + \sqrt{L}}	\right| < \epsilon \\
+		\left| \frac{s_n - L}{\sqrt{s_n} + \sqrt{L}} \right| < \epsilon	
+	\end{eqnarray}
+	
+	Now, if we can find N such that (3) is satisfied, we can prove the equality (1), and then prove convergence for given series. \\
+	We know that the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ is bounded as $ \lbrace s_n \rbrace_{n=1}^\infty $ is convergent. Hence $\exists \mathrm{M} \in \mathbb{R}$, where $\mathrm{M} > 0$ 
+	\begin{eqnarray}
+		\left| s_n \right| \leq \mathrm{M} \spacem \forall n \in \mathbb{R} \\
+		\left| \sqrt{s_n} \right| \leq \mathrm{M} \\
+		\wealso \nonumber \\
+		\left| \sqrt{s_n} + \sqrt{L} \right| \leq \left| \sqrt{s_n} \right| + \left| \sqrt{L}\right| \leq \mathrm{M} + \left| \sqrt{L}\right|
+	\end{eqnarray}	 
+	
+	We are given that the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ is convergent and converges to L, hence there must exist a $\mathrm{N_1} \in \mathbb{I}$ such that the equation 
+	\begin{eqnarray}
+		\left| s_n - L \right| < \epsilon (\mathrm{M} + \left| \sqrt{L}\right|) \spacem (\forall n \geq \mathrm{N}_1) \spacem (\epsilon > 0) \\
+		\left|\sqrt{s_n} - \sqrt{L} \right| \left|\sqrt{s_n}+\sqrt{L} \right| < \epsilon (\mathrm{M} + \left| \sqrt{L}\right|) \\
+		\mathrm{Re-writing} \nonumber \\
+		\left|\sqrt{s_n} - \sqrt{L} \right| < \frac{\epsilon (\mathrm{M} + \left| \sqrt{L}\right|)}{\left|\sqrt{s_n} + \sqrt{L} \right|} \\
+		\left|\sqrt{s_n} - \sqrt{L} \right| < \epsilon
+	\end{eqnarray}
+	Hence from (10), we can clearly see that $ \lbrace s_n^{1/2} \rbrace_{n=1}^\infty $ is convergent and converges to $\sqrt{L}$. Now for the given question we can see that if $\lim \limits_{n \to \infty} s_n = 1$, then $\lim \limits_{n \to \infty} s_n^{1/2} = \sqrt{1} = 1$. Hence proved.
+}
+\clearpage
+
+\item{Evaluate $\lim \limits_{n \to \infty} \sqrt{n} (\sqrt{n+1} - \sqrt{n})$.\\
+	\setcounter{equation}{0}	
+	\begin{eqnarray}
+		\lim \limits_{n \to \infty} \sqrt{n} (\sqrt{n+1} - \sqrt{n}) \nonumber \\
+		\mathrm{Rationalizing} \nonumber \\
+		\lim \limits_{n \to \infty} \sqrt{n} \cdot \frac{n+1 - n}{\sqrt{n+1} + \sqrt{n}} \\
+		\lim \limits_{n \to \infty} \frac{\sqrt{n}}{\sqrt{n+1} + \sqrt{n}} \\
+		\mathrm{Dividing\space both \space sides \space by \space} \sqrt{n} \nonumber \\
+		\lim \limits_{n \to \infty} \frac{1}{\sqrt{\frac{n+1}{n}} + \sqrt{\frac{n}{n+1}}}
+	\end{eqnarray}
+	
+	Now if we can find the limit of $\lim \limits_{n \to \infty} \frac{n}{n+1}$, we will be able to compute the given limit. Solving
+	
+	\begin{eqnarray}
+		\lim \limits_{n \to \infty} \frac{n}{n+1} \\
+		\mathrm{Dividing \space numerator \space and \space denominator \space by \space } n \nonumber \\
+		\lim \limits_{n \to \infty} \frac{1}{1 + 1/n} \\
+		\we \lim \limits_{n \to \infty} 1/n = 0 \\
+		\wealso \nonumber \\
+		\lim \limits_{n \to \infty} s_n + t_n = \lim \limits_{n \to \infty} s_n + \lim \limits_{n \to \infty} t_n \\
+		\mathrm{Hence \spacem} \lim \limits_{n \to \infty} 1 + 1/n = \lim \limits_{n \to \infty} 1 + \lim \limits_{n \to \infty} 1/n \\
+		\lim \limits_{n \to \infty} 1 + 1/n = 1 \spacem\spacem \from \mathrm{(6) \space and \space (7)} \\
+		\we \nonumber \\
+		\lim \limits_{n \to \infty} \frac{s_n}{t_n} = \frac{\lim \limits_{n \to \infty} s_n}{\lim \limits_{n \to \infty} t_n} \\
+		\mathrm{Using \space (10)} \nonumber \\
+		\lim \limits_{n \to \infty} \frac{1}{1+1/n} = \frac{\lim \limits_{n \to \infty} 1}{\lim \limits_{n \to \infty} 1+1/n} \\
+		\mathrm{Using \space (9) \space and \space (11)} \nonumber \\
+		\lim \limits_{n \to \infty} \frac{1}{1+1/n} = \frac{1}{1} = 1 \nonumber \\
+		\mathrm{Hence \space} \lim \limits_{n \to \infty} \frac{n}{n+1} = 1
+	\end{eqnarray}
+	
+	We know that if $\lim \limits_{n \to \infty} s_n= \mathrm{L}$, then $\lim \limits_{n \to \infty} s_n^{1/2}=\sqrt{\mathrm{L}}$. So 
+	
+	\begin{eqnarray}
+		\lim \limits_{n \to \infty} \sqrt{\frac{n}{n+1}} = \sqrt{1} = 1
+	\end{eqnarray}
+	
+	We also know that if $\lim \limits_{n \to \infty} s_n = \mathrm{L}$, then $\lim \limits_{n \to \infty} \frac{1}{s_n} = \frac{1}{\mathrm{L}}$. So,
+	
+	\begin{eqnarray}
+		\lim \limits_{n \to \infty} \sqrt{\frac{n+1}{n}} = \lim \limits_{n \to \infty} \sqrt{\frac{n}{n+1}} \nonumber \\
+		\lim \limits_{n \to \infty} \sqrt{\frac{n+1}{n}} = 1
+	\end{eqnarray}
+	
+	Plugging the values obtained in equations (13) and (14) into the equation (3), we get
+	
+	\begin{eqnarray}
+		\lim \limits_{n \to \infty} \frac{1}{\sqrt{\frac{n+1}{n}} + \sqrt{\frac{n}{n+1}}} = \frac{1}{1 + 1} \nonumber \\
+		\lim \limits_{n \to \infty} \frac{1}{\sqrt{\frac{n+1}{n}} + \sqrt{\frac{n}{n+1}}} = \frac{1}{2} \nonumber \\
+		\mathrm{Hence, \spacem} \lim \limits_{n \to \infty} \sqrt{n} (\sqrt{n+1} - \sqrt{n}) = \frac{1}{2} \nonumber
+	\end{eqnarray}
+}
+
+\item{Suppose $ \lbrace s_n \rbrace_{n=1}^\infty $ is a sequence of positive numbers and $0 < x < 1$. If $s_{n+1} < xs_n$ ($\mathrm{n} \in \mathbb{I}$), prove that $\lim \limits_{n \to \infty} s_n=0$ \\\\
+	Let us assume another sequence $t_n$ such that $t_n \geq s_n$ and $t_n$ consist of positive real terms such that $t_{n+1} = xt_n$, where $0 < x < 1$. Now we know that 
+	
+	\setcounter{equation}{0}
+	\begin{eqnarray}
+		x < 1 \\
+		s_n \cdot x < s_n \\
+		\wealso \nonumber \\
+		s_{n+1} < x \cdot s_n \\
+		\mathrm{So, \spacem} s_{n+1} < s_n 
+	\end{eqnarray}
+	
+	From (4), we can conclude that $s_n$ is a strictly monotonically non-increasing sequence. We also know that $s_n$ consists only of positive real numbers, so it is also bounded below by 0 and hence $ \lbrace s_n \rbrace_{n=1}^\infty $ must converge to a limit L such that 
+	\begin{eqnarray}
+		\mathrm{L} \geq 0 
+	\end{eqnarray}
+	
+	Now let us inspect the sequence $ \lbrace t_n \rbrace_{n=1}^\infty $. We know 
+	\begin{eqnarray}
+		x < 1 \nonumber \\
+		x \cdot t_n < t_n \\
+		t_{n+1} = x \cdot t_{n} \spacem (\mathrm{Assumed \space Series}) \nonumber \\
+		\from \mathrm{(6)} \nonumber \\
+		t_{n+1} < t_n
+	\end{eqnarray}
+	
+	Hence from (7) we can see that the sequence $ \lbrace t_n \rbrace_{n=1}^\infty $ is strictly monotonically non-increasing and $ \lbrace t_n \rbrace_{n=1}^\infty $ is a sequence consisting of positive terms hence $t_n \geq 0 \space \forall n \in \mathbb{I}$. So it is also bounded below by 0. hence by the monotonic theorem, the sequence $ \lbrace t_n \rbrace_{n=1}^\infty $ must be convergent.\\
+	Let the sequence $ \lbrace t_n \rbrace_{n=1}^\infty $ converge to a positive quantity M. So it will hold that
+	
+	\begin{eqnarray}
+		\lim \limits_{n \to \infty} t_n = \mathrm{M} \\
+		\lim \limits_{n \to \infty} t_{n+1} = \mathrm{M} \\
+		\mathrm{and} \nonumber \\
+		\lim \limits_{n \to \infty} t_{n+1} = x \cdot \lim \limits_{n \to \infty} t_n \\
+		\mathrm{M} = x \cdot \mathrm{M} \\
+		\mathrm{M} - \mathrm{M} \cdot x = 0  \nonumber \\
+		\mathrm{M} (x - 1) = 0 \nonumber 
+	\end{eqnarray}
+	
+	This is only possible when either $x=0$ or M$=0$, but we know that $x \not= 0$, hence M$=0$.\\
+	
+	Now we know that $s_n \leq t_n \spacem \forall n \in \mathbb{I}$. So according to theorem 
+	\begin{eqnarray}
+		\lim \limits_{n \to \infty} s_n \leq \lim \limits_{n \to \infty} t_n \\
+		\lim \limits_{n \to \infty} s_n \leq 0 \\
+		\we \lim \limits_{n \to \infty} s_n = \mathrm{L} \nonumber \\
+		\from (5) \space \wealso \nonumber \\
+		\mathrm{L} \geq 0 \\
+		\from \mathrm{(13) \space and \space (14)} \nonumber \\
+		\mathrm{L} = 0
+	\end{eqnarray}
+	\begin{center}
+		Hence, $\lim \limits_{n \to \infty} s_n=0$
+	\end{center}
+}
+
+\item{Suppose
+	\begin{align*}
+		\lim \limits_{n \to \infty} \frac{s_n - 1}{s_n + 1} = 0
+	\end{align*}
+	Prove $\lim \limits_{n \to \infty} s_n= 1$
+	
+	\setcounter{equation}{0}
+	\begin{eqnarray}
+		\lim \limits_{n \to \infty} \frac{s_n - 1}{s_n + 1} = 0 \\
+		\we \nonumber \\
+		\lim \limits_{n \to \infty} \frac{s_n}{t_n} = \frac{\lim \limits_{n \to \infty} s_n}{\lim \limits_{n \to \infty} t_n} \\
+		\mathrm{Applying \space (2) \space in \space (1)} \nonumber \\
+		\frac{\lim \limits_{n \to \infty} s_n - 1}{\lim \limits_{n \to \infty} s_n+1}=0 \nonumber \\
+		\lim \limits_{n \to \infty} s_n-1 = 0 \\
+		\wealso \nonumber \\
+		\lim \limits_{n \to \infty} s_n - t_n = \lim \limits_{n \to \infty} s_n - \lim \limits_{n \to \infty} t_n 		
+	\end{eqnarray}
+	\begin{eqnarray}
+		\mathrm{Applying \space (4)\space in \space (3)} \nonumber \\
+		\lim \limits_{n \to \infty} s_n - \lim \limits_{n \to \infty} 1 = 0 \\
+		\lim \limits_{n \to \infty} s_n = \lim \limits_{n \to \infty} 1 \\
+		\we \lim \limits_{n \to \infty} 1 = 1 \\
+		\from \mathrm{(6) \space and \space (7)} \nonumber \\
+		\lim \limits_{n \to \infty} s_n = 1 \nonumber \\
+		\hence \nonumber
+	\end{eqnarray}
+}
+
+\item{Prove that $\lim \limits_{n \to \infty} (1 + 1/n)^{n+1} = e$. Also, prove that
+	\begin{align*}
+	\lim \limits_{n \to \infty} \left[ 1 + \frac{1}{1+n} \right]^n = e
+	\end{align*}
+}
+
+\item{Using the identity 
+	\begin{align*}
+		1 + \frac{2}{n} = \left( 1 + \frac{1}{n+1}\right) \left( 1 + \frac{1}{n}\right)
+	\end{align*}
+	Prove that 
+	\begin{align*}
+		\lim \limits_{n \to \infty} \left(1 + \frac{2}{n} \right)^n = e^2
+	\end{align*}
+	
+	\setcounter{equation}{0}
+	\begin{eqnarray}
+		\we \nonumber \\
+		\lim \limits_{n \to \infty} s_n \cdot t_n = \lim \limits_{n \to \infty} s_n \cdot \lim \limits_{n \to \infty} t_n \\
+		\mathrm{we \space are \space given} \nonumber \\
+		\lim \limits_{n \to \infty} \left( 1 + \frac{2}{n}\right)^n = \lim \limits_{n \to \infty} \left[\left( 1 + \frac{1}{n+1}\right)^n \left(1 + \frac{1}{n} \right)^n\right] \\
+		\from \mathrm{(1) \space and \space (2)} \nonumber \\
+		\lim \limits_{n \to \infty} \left(1 + \frac{2}{n} \right)^n = \lim \limits_{n \to \infty} \left( 1 + \frac{1}{n+1}\right)^n \lim \limits_{n \to \infty} \left( 1 + \frac{1}{n}\right)^n \\
+		\we \nonumber \\
+		\lim \limits_{n \to \infty} \left(1 + \frac{1}{n+1} \right)^n = e \spacem \mathrm{and} \\
+		\lim \limits_{n \to \infty} \left(1 + \frac{1}{n} \right)^n = e \\
+		\mathrm{Substituting\space (4)\space and \space (5) \space in \space (3)} \nonumber \\
+		\lim \limits_{n \to \infty} \left(1 + \frac{2}{n} \right)^n = e \cdot e \nonumber \\
+		\lim \limits_{n \to \infty} \left(1 + \frac{2}{n} \right)^n = e^2 \nonumber \\
+		\hence \nonumber
+	\end{eqnarray}
+}
+
+\item{If $c > 0$, prove that $\lim \limits_{n \to \infty} c^{1/n} = 1$}
+
+\item{Let $s_1 = \sqrt{2}$ and let $s_{n+1} = \sqrt{2} \cdot \sqrt{s_n}$ for n $\geq 2$.
+	\begin{enumerate}
+		\item{Prove, by induction that $s_n \leq 2$ for all n.}
+		\item{Prove that $s_{n+1} \geq s_n$ for all n}
+		\item{Prove that $ \lbrace s_n \rbrace_{n=1}^\infty $ is convergent.}
+		\item{Prove that $\lim \limits_{n \to \infty} s_n=2$.}
+	\end{enumerate}
+	
+	First we will prove that $s_n \leq 2$ for all n.
+	\setcounter{equation}{0}
+	\begin{eqnarray}
+		s_1 = \sqrt{2} \\
+		s_{n+1} = \sqrt{2} \cdot \sqrt{s_n} \\
+		s_2 = \sqrt{2} \cdot \sqrt{\sqrt{2}} < 2 \\
+		\mathrm{Now, \spacem} s_3 = \sqrt{2} \cdot \sqrt{\sqrt{\sqrt{2}}} < 2
+	\end{eqnarray}
+	\begin{center}
+		Hence, we have seen that for the first few terms the condition $s_n \leq 2$ holds. Now let us assume that it holds for upto the $k^{th}$ term of the series. That is 
+	\end{center}
+	\begin{eqnarray}
+		s_{k} \leq 2 \nonumber \\
+		\sqrt{s_k} \leq \sqrt{2} \\
+		s_{k+1} = \sqrt{2} \cdot \sqrt{s_k} \\
+		\from \mathrm{(5)} \nonumber \\
+		\sqrt{2} \cdot \sqrt{s_k} \leq 2 \\
+		\from \mathrm{(6)} \nonumber \\
+		s_{k+1} \leq 2 \nonumber \\
+		\hence \nonumber
+	\end{eqnarray}
+	
+	We now need to find out for what values of n is the following condition true:
+	\setcounter{equation}{0}
+	\begin{align*}
+		s_{n+1} \geq s_n
+	\end{align*}
+	\begin{align*}
+		\we \\
+		s_{n+1} = \sqrt{2 \cdot s_n} \\
+		s_{n+1} \geq s_n \\
+		\sqrt{2 \cdot s_n } \geq s_n \\
+	\end{align*}
+	\begin{center}
+		Squaring both sides
+	\end{center}
+	\begin{align*}
+		2 \cdot s_n \geq {s_n}^2 \\
+		{s_n}^2 - 2 \cdot s_n \leq 0 \\
+		s_n (s_n - 2) \leq 0
+	\end{align*}
+	For this condition to be satisfied $s_n \in [0,2]$. we have already proved earlier that $s_n \leq 2$ and it is given that $s_n$ are positive real numbers hence we can say that $s_n \in [0,2]$. So $s_{n+1} \geq s_n \space \forall n \in \mathbb{I}$.\\
+	
+	We can now say that the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ is monotonically non-decreasing and we have also proved that $s_n \leq 2$ and that $s_n \in [0,2]$. So we can also say the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ is bounded. By using the monotonicity theorem that whenever a sequence is bounded and monotonic, it must also converge. Hence we can also say that the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ converges.
+}
+
+\item{Suppose that $s_1 > s_2 > 0$, and let $s_{n+1} = \frac{1}{2}(s_n + s_{n-1})$ $(n \geq 2)$. Prove that 
+	\begin{enumerate}
+		\item{$s_1, s_3, s_5$ is non-increasing}
+		\item{$s_2, s_4, s_6$ is non-decreasing}
+		\item{$ \lbrace s_n \rbrace_{n=1}^\infty $ is convergent}
+	\end{enumerate}
+	
+	We can reduce the concurrent terms of the series as :
+	\setcounter{equation}{0}	
+	\begin{eqnarray}
+		s_3 = \frac{1}{2}(s_2 + s_1) \no \\
+		\we \no \\
+		s_1 > s_2 \space, (\mathrm{given}) \\
+		\from \mathrm{(1) \space : \spacem } s_1 + s_2 > s_2 + s_2 \no \\
+		\frac{1}{2} (s_1 + s_2) > s_2 \\
+		\from \mathrm{(2) \space : \spacem} s_3 > s_2 \\
+		\from \mathrm{(1) \space : \spacem} s_1 + s_2 < s_1 + s_1 \no \\
+		\frac{1}{2} (s_1 + s_2) < s_1 \\
+		\from \mathrm{(4) \space : \spacem} s_3 < s_1  
+	\end{eqnarray}
+	\begin{center}
+		We now know that \\
+		$s_1 > s_3 > s_2$ \\
+		Similarly,
+	\end{center}
+	\begin{eqnarray}
+		s_4 = \frac{1}{2} (s_3 + s_2) \no \\
+		\from \mathrm{(3): \spacem} s_3  + s_2 > 2s_2 \no \\
+		\frac{1}{2}(s_3 + s_2) > s_2 \no \\
+		s_4 > s_2  \\
+		\from \mathrm{(3): \spacem} s_3 + s_2 < 2s_3 \no \\
+		\frac{1}{2}(s_2 + s_3) < s_3 \no \\
+		s_4 < s_3
+	\end{eqnarray}
+	\begin{center}
+		We now know that \\
+		$s_1 > s_3 > s_4 > s_2$ \\
+		and we can continue to create these series which will result in \\
+		$s_1 > s_3 > s_5 > \cdots $ and \\
+		$s_2 < s_4 < s_6 < \cdots$
+	\end{center}
+	
+	Now, Let the sequence $s_1, s_3, s_5 \cdots$ be denoted by $ \lbrace s_{2n-1} \rbrace_{n=1}^\infty $ or the Odd series and $s_2, s_4, s_6 \cdots$ be denoted by $ \lbrace s_{2n} \rbrace_{n=1}^\infty $ or the even sequence.
+	
+		We can now see that all terms of the odd and even series are between $s_1$ and $s_2$, hence the  odd and even sequences as well as $ \lbrace s_n \rbrace_{n=1}^\infty $ are bounded between $[s_2, s_1]$.
+		
+		Now the sequence $ \lbrace s_{2n-1} \rbrace_{n=1}^\infty $ is bounded and it is monotonic, hence it must be convergent. Let the limit of the sequence be $L$. That is 
+		\begin{eqnarray}
+			\lim \limits_{n \to \infty} s_{2n-1} = L
+		\end{eqnarray}
+		
+		We also know that the sequence $ \lbrace s_{2n} \rbrace_{n=1}^\infty $ is bounded and monotonic, hence it must also converge. Let the limit of this sequence be $M$. That is 
+		\begin{eqnarray}
+			\lim \limits_{n \to \infty} s_{2n} = M
+		\end{eqnarray}
+		
+		But we also know that $\lim \limits_{n \to \infty} s_{2n-1} = $ $\lim \limits_{n \to \infty} s_{2n}$
+		\begin{eqnarray}
+			\from \mathrm{(9) \space and \space (10): \spacem} \lim \limits_{n \to \infty} s_{2n-1} = \lim \limits_{n \to \infty} s_{2n} \no \\
+			L = M \no
+		\end{eqnarray}		 
+		
+		Hence the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ converges.
+}
+
+\end{enumerate}
+\clearpage
+
+\subsection{\exr \, 2.8}
+\fancyhead[R]{\slshape \exr \, 2.8}
+
+\begin{enumerate}
+\item{Give an example of a sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ and $ \lbrace t_n \rbrace_{n=1}^\infty $ for which, as $n \to \infty$
+	\begin{enumerate}
+		\item{$s_n \to \infty, \spacem t_n \to \infty, \spacem s_n + t_n  \to \infty$}
+		\item{$s_n \to \infty , \spacem t_n \to \infty, \spacem s_n - t_n \to 7$}
+	\end{enumerate}
+	
+	\begin{tabular}{|c|c|c|c|c|c|c|} \hline
+	No.	&$s_n$ &$t_n$ &$s_n + t_n$	&$\lim \limits_{n \to \infty}s_n + t_n$ &$s_n - t_n$	&$\lim \limits_{n \to \infty}s_n - t_n$ \\ \hline
+	(a)	&$n$	&$n$	&$2n$	&$\infty$	&$0$	&$0$ \\ \hline
+	(b)	&$n+7$	&$n$	&$2n+7$	&$\infty$	&$7$	&$7$ \\ \hline	
+	\end{tabular}
+}
+
+\item{Suppose that $ \lbrace s_n \rbrace_{n=1}^\infty $ is a divergent sequence of real numbers and $c \in \mathbb{R}$, $c \neq 0$. Prove that $ \lbrace c \cdot s_n \rbrace_{n=1}^\infty $ diverges.\\
+	It is given that the sequence is divergent, but there can be 3 possible cases how the sequence diverges which isn't mentioned. \\
+	
+	\underline{Case I}\\
+	Here we are considering the case that the sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ is diverging to $+\infty$. That is $\lim \limits_{n \to \infty} s_n \to \infty$.
+	
+	Now as the sequence is diverging to $\infty$, then it cannot be bounded and hence there would exist an $M \in \mathbb{R}$ such that $M > 0$ where
+	\setcounter{equation}{0}
+	\begin{eqnarray}
+		\left| s_n\right| \geq M \spacem (\forall n \geq N)
+	\end{eqnarray}
+	where $N \in \mathbb{I}$ and $N > 0$
+	\begin{eqnarray}
+		c \cdot \left|s_n \right| \geq c \cdot M \spacem (\forall n \geq N) \\
+		\mathrm{let \space} c \cdot M = M^{'} \no \\
+		\mathrm{So, \spacem} c \cdot \left|s_n \right| \geq M^{'}
+	\end{eqnarray}	 
+	here $M^{'}$ is some positive real number which clearly shows that the sequence $ \lbrace c \cdot s_n \rbrace_{n=1}^\infty $ is unbounded and diverges to $+\infty$.\\
+	
+	\underline{Case II} \\
+	Here we can consider the case where $ \lbrace s_n \rbrace_{n=1}^\infty $ diverges to $-\infty$ which can be solved similarly as the above example.
+	
+	\underline{Case III} \\
+	This is the case where the sequence is divergent because it is oscillating, but may or may not be bounded. As we have already shown the case of an unbounded sequence in (Case I), we will consider a bounded oscillating sequence.\\
+	
+	As this sequence is oscillating, it will not be monotonic and for some indexes $n_1, n_2$ and $n_3$ where $n_1 < n_2 < n_3$, it will be the case that (considering for some oscillating sequence)
+	
+	\begin{eqnarray}
+		s_{n_1} < s_{n_2} \\
+		\mathrm{But \spacem} s_{n_2} > s_{n_3}
+	\end{eqnarray}
+	
+	Now let us see the case for $ \lbrace c \cdot s_n \rbrace_{n=1}^\infty $
+	
+	If $c > 0$ 
+	\begin{eqnarray}
+		\from \mathrm{(4): \spacem} c \cdot s_{n_1} < c \cdot s_{n_2} \\
+		\from \mathrm{(5): \spacem} c \cdot s_{n_2} > s_{n_3}
+	\end{eqnarray}
+	
+	Hence $ \lbrace c \cdot s_n \rbrace_{n=1}^\infty $ is also not monotonic, hence divergent.
+	Similarly we can prove that $ \lbrace c \cdot s_n \rbrace_{n=1}^\infty $ will diverge for the case $c < 0$.
+}
+
+\item{True or False? If $ \lbrace s_n \rbrace_{n=1}^\infty $ is oscillating and not bounded,and $ \lbrace t_n \rbrace_{n=1}^\infty $ is bounded, then $ \lbrace s_n+t_n \rbrace_{n=1}^\infty $ is oscillating and not bounded.\\
+	True: The sequence $ \lbrace s_n + t_n\rbrace_{n=1}^\infty $ will also be unbounded and oscillating.
+}
+\end{enumerate}
+\clearpage
+
+\subsection{\exr \, 2.9}
+\fancyhead[R]{\slshape \exr \, 2.9}
+\begin{enumerate}
+\item{Find the limit superior and limit inferior to the following sequences:
+	\begin{enumerate}
+		\item{1,2,3,1,2,3,1,2,3}
+		\item{$ \lbrace \sin(n\pi/2) \rbrace_{n=1}^\infty $}
+		\item{$ \lbrace (1+1/n)\cos{n\pi} \rbrace_{n=1}^\infty $}
+		\item{$ \lbrace (1 + 1/n)^n \rbrace_{n=1}^\infty $}
+	\end{enumerate}
+	
+	\begin{tabular}{|c|cc|} \hline
+		No.		&$\limsup\limits_{n \to \infty} s_n$		&$\liminf\limits_{n \to \inf} s_n$ \\ \hline
+		(a)		&3		&1 \\
+		(b)		&1		&-1 \\
+		(c)		&1		&-1 \\
+		(d)		&e		&e \\ \hline 
+	\end{tabular}
+}
+\item{If the $\limsup$ of the sequence $ \lbrace s_n \rbrace_{n=1}^\infty = M$, prove that $\limsup$ of any subsequence of $ \lbrace s_n \rbrace_{n=1}^\infty $ is $\leq M$.\\\\
+	Now let 
+	
+	\setcounter{equation}{0}
+	\begin{eqnarray}
+		P_n = \mathrm{l.u.b} \left\lbrace s_{n+1}, s_{n+2}, s_{n+3} \cdots \right\rbrace \\
+		\limsup \limits_{n \to \infty} s_n = \lim \limits_{n \to \infty} P_n \\
+		\we \limsup \limits_{n \to \infty} s_n = M \\
+		\from \mathrm{(3): \spacem}\lim \limits_{n \to \infty} P_n = M
+	\end{eqnarray}
+	
+	Now let us take any subsequence of $ \lbrace s_n \rbrace_{n=1}^\infty $ from the indexes $n_1, n_2, n_3 \cdots$ where $n_1 < n_2 < n_3 < \cdots$
+	
+	\begin{eqnarray}
+		\lbrace s_{n_j} \rbrace_{j=1}^\infty = \left\lbrace s_{n_1}, s_{n_2}, s_{n_3} \cdots \right\rbrace \\
+		\mathrm{Now, \spacem let} \no \\
+		T_j = \mathrm{l.u.b} \left\lbrace s_{n_j}, s_{n_{j+1}}, s_{n_{j+2}} \cdots \right\rbrace \\
+		\we \spacem \limsup \limits_{j \to \infty} s_{n_j} = \lim \limits_{j \to \infty} T_j \\
+		\mathrm{Now, \space} \wealso \no \\
+		\mathrm{l.u.b} \left\lbrace s_{n_1} , s_{n_2}, s_{n_3} \cdots \right\rbrace \leq \mathrm{l.u.b} \left\lbrace s_1, s_2, s_3 \cdots \right\rbrace \\
+		\mathrm{So \space from \space (8)} \no \\
+		\lim \limits_{j \to \infty} \mathrm{l.u.b} \left\lbrace s_{n_j}, s_{n_{j+1}}, s_{n_{j+2}} \cdots \right\rbrace \leq \lim \limits_{n \to \infty} \left\lbrace s_n , s_{n+1}, s_{n+2} \cdots\right\rbrace \\
+		\from \mathrm{(9)} \no \\
+		\limsup \limits_{n \to \infty} \lbrace s_{n_j} \rbrace_{n=1}^\infty \leq M \spacem \mathrm{Or} \no 
+	\end{eqnarray}
+	The limit superior of a subsequence of a sequence $ \lbrace s_n \rbrace_{n=1}^\infty $ where $\limsup \limits_{n \to \infty} s_n = M$ is $\leq M$. Hence Proved.
+}
+\clearpage
+
+\item{If $ \lbrace s_n \rbrace_{n=1}^\infty $ is a bounded sequence of real numbers and $\liminf \limits_{n \to \infty} s_n=m$, prove that there is a subsequence of $ \lbrace s_n \rbrace_{n=1}^\infty $ which converges to $m$. \\
+Also prove that no subsequence of $ \lbrace s_n \rbrace_{n=1}^\infty $ can converge to a limit less than $m$.\\\\
+	We are given that $\liminf \limits_{n \to \infty} s_n = m $. So we can state that 
+	\setcounter{equation}{0}
+	\begin{eqnarray}
+		\lim \limits_{n \to \infty} \mathrm{g.l.b}\left\lbrace s_n, s_{n+1}, s_{n+2}\cdots\right\rbrace = m \\
+		\mathrm{and \spacem} \mathrm{g.l.b} \left\lbrace s_n, s_{n+1}, s_{n+2} \cdots\right\rbrace \geq m \spacem (\forall n \geq N)
+	\end{eqnarray}
+	For some value of $N \in \mathbb{I}$. \\
+	Now let us consider some subsequence of $ \lbrace s_n \rbrace_{n=1}^\infty $ with indexes $n_1, n_2, n_3, \cdots$ such that 
+	
+	\begin{eqnarray}
+		\lbrace s_j \rbrace_{j=1}^\infty = \left\lbrace s_{n_1}, s_{n_2} \cdots\right\rbrace \\
+		\we \space \forall j > N^{'} \space \mathrm{where \space} N^{'} > N \space \mathrm{the} \no \\
+		\mathrm{g.l.b} \left\lbrace s_j, s_{j+1}, s_{j+2} \cdots \right\rbrace \geq m \\
+		\from \mathrm{(4): \spacem}  \lim \limits_{j \to \infty} s_j \geq m 
+	\end{eqnarray}
+	Hence, we cam conclude that all sub-sequences of $ \lbrace s_n \rbrace_{n=1}^\infty $ will converge to a value $\geq m$.\\
+	
+	Now let us again create a subsequence such of indexes $n_1, n_2, n_3 \cdots$, such that
+	\begin{eqnarray}
+		s_{n_1} \geq m \spacem \mathrm{and}  \\
+		s_{n_2} \leq s_{n_1} \space\mathrm{and \space} s_{n_2} \geq m \no \\
+		\mathrm{Similarly \space we\space will \space take \spacem} s_{n_3} \leq s_{n_2} \space \mathrm{and} \space s_{n_3} \geq m \no
+	\end{eqnarray}
+	We can continue this trend to reflect 
+	\begin{eqnarray}
+		s_{n_{j+1}} \leq s_{n_j} \space \forall j \in \mathbb{I} \space \mathrm{and} \no \\
+		s_{n_j} \geq m \no \\
+		\mathrm{Now \space let \spacem} T_j = \mathrm{g.l.b}\left\lbrace s_{j}, s_{j+1}, s_{j+2} \cdots\right\rbrace \\
+		\we \space \forall j \in \mathbb{I} \spacem \mathrm{g.l.b}\left\lbrace s_{j}, s_{j+1}, s_{j+2} \cdots\right\rbrace \geq m \\
+		\mathrm{Hence, \spacem} T_n \geq m 
+	\end{eqnarray}
+	We can then create this sequence such that $\liminf \limits_{n \to \infty} s_j = m$. Hence proved.
+}
+\end{enumerate}
+\clearpage
+
+\subsection{\exr \, 2.10}
+\fancyhead[R]{\slshape \exr \, 2.10}
+\clearpage
+
+\subsection{\exr \, 2.11}
+\fancyhead[R]{\slshape \exr \, 2.11}
+\clearpage
+
+\subsection{\exr \, 2.12}
+\fancyhead[R]{\slshape \exr \, 2.12}
+\clearpage
+
+\end{document}
