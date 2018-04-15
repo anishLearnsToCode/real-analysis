@@ -2006,6 +2006,71 @@ Let $\delta$ be any number such that $0 < \delta < 1$.
 	}
 	\end{enumerate}
 }
+
+\item{
+	Let $f(x) = x^2  + 4x$. Find $\delta > 0$ such that 
+	\setc
+	\begin{eqnarray}
+		|f(x) - 5| < \frac{1}{10} \spacem (0 < |x-1| < \delta) \no
+	\end{eqnarray}	
+	
+	This statement implies that the function $f(x)$ will be continuous at the point $x = 1$ and $\lim \limits_{x \to 1} f(x) = 5$. 
+	
+	\setc
+	\begin{eqnarray}
+		\we |f(x) - 5| < \frac{1}{10} \\
+		\mathrm{Putting \space the \space value \space of \space f(x)} \no \\
+		|x^2 + 4x - 5| < \frac{1}{10} \\
+		\so |x+5| \cdot |x-1| < \frac{1}{10} \\
+		\mathrm{Hence \space } \from (3) \no \\
+		|x-1| < \frac{1}{10 \cdot |x+5| }
+	\end{eqnarray}
+	
+	Now we have to find a value for $\delta$ such that $0 < |x-1| < \delta$. So, If we take 
+	
+	\begin{eqnarray}
+		\delta = \frac{1}{10 \cdot |x+5|} \\
+		\from  (4) \no \\
+		\we \space |x-1| < \frac{1}{10 \cdot |x+5|} \forall x \in \mathbb{R} \\
+		\so |f(x) - 5| < \frac{1}{10} \spacem (0 < |x-1| < \delta) \\
+		\hence \no
+	\end{eqnarray}
+}
+
+\item{
+	Prove directly from definition 4.1A that $\lim \limits_{x \to 1} x^2 + 4x = 5$.
+	
+	We need to prove that for the function $f(x) = x^2 + 4x$, the limit exists at $x=1$ and that $\lim \limits_{x \to 1} x^2 + 4x = 5$.
+	
+	The definition for the limit bat function $f(x)$ states that 
+	
+	\setc
+	\begin{eqnarray}
+		|f(x) - L| < \epsilon \spacem (0 < |x-a| < \delta) 
+	\end{eqnarray}
+	
+	where $\epsilon > 0$ and for some $\delta > 0 $. Here $a=1$ and $L = 5$.
+	
+	\begin{eqnarray}
+		|x^2 + 4x - 5| = |x+5| \cdot |x-1| \\
+		\from (1) \spacem \we \no \\
+		|x-1| < \delta \no \\
+		\so \mathrm{let \spacem} \delta < 1 \\
+		from (4) \no \\
+		|x-1| < 1 \no \\
+		\mathrm{Now, \spacem} x \in (0,2) \\
+		\so |x+5| \in (5,7) \\
+		|x+5| < 7 \\
+		\from (6) \no \\
+		|x-1| \cdot |x+5| < 7 \delta \\
+		\mathrm{Now, \space let \space} \delta = \mathrm{min} (1, \epsilon / 7) \\
+		\so |x^2 + 4x - 5| < \epsilon \no
+	\end{eqnarray}
+	
+	So, we have found a $\delta$, namely $\delta = \mathrm{min} (1, \epsilon / 7)$, for which (1) holds, hence this function $f(x)$ is continuous at $x=1$. 
+}
+
+
 \end{enumerate}
 
 \end{document}
